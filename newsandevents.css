@@ -864,10 +864,10 @@ header {
 /* Eto ang code para sa background image */
 .modern-hero {
     width: 100%;
-    height: 600px; /* Taas ng banner */
+    height: 500px; /* Taas ng banner */
     
     /* BACKGROUND IMAGE CODE */
-    background-image: url('picture/leaobg.jpg'); /* <-- PALITAN MO ITO NG FILENAME NG PICTURE MO */
+    background-image: url('picture/[CSI]\ MRL\ Cover\ Photo.jpeg'); /* <-- PALITAN MO ITO NG FILENAME NG PICTURE MO */
     background-size: cover;      /* Pinupuno ang buong space ng banner */
     background-position: center; /* Pinapagitna ang focus ng litrato */
     background-repeat: no-repeat;

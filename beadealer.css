@@ -344,6 +344,307 @@ header {
     font-size: 13px;
     color: #666666;
 }
+.dealer-section {
+    padding: 80px 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.dealer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two-column layout */
+    gap: 50px;
+    padding: 0 20px;
+}
+
+.dealer-subtitle {
+    color: #0b1d44; 
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.info-item {
+    display: flex;
+    gap: 12px;
+}
+
+.info-item i {
+    color: #e01414;
+    margin-top: 5px;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Social Media List */
+.dealer-socials {
+    list-style: none;
+    padding: 0;
+}
+
+.dealer-socials li {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+}
+
+/* Form Styling */
+.dealer-form-box {
+    background: #fff;
+    padding: 20px;
+}
+
+.form-title {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.dealer-form-box p {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.dealer-form-box input, .dealer-form-box textarea {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+.dealer-form-box input:focus, .dealer-form-box textarea:focus {
+    border-bottom: 2px solid #18203b;
+}
 
 
 
+.dealer:hover {
+    background-color: #cfc2c2; /* Mas light na maroon */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(128, 0, 0, 0.3);
+}
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .dealer-container { grid-template-columns: 1fr; }
+    .info-grid { grid-template-columns: 1fr; }
+}
+.dealer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+/* Right Column Wrapper */
+.dealer-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space sa pagitan ng Form at Mapa */
+}
+
+.dealer-form-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.form-title {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.dealer-form-box p {
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Minimalist Inputs */
+.dealer-form-box input, 
+.dealer-form-box textarea {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    outline: none;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.dealer-form-box input:focus, 
+.dealer-form-box textarea:focus {
+    border-bottom: 2px solid #800000; /* Maroon line focus */
+}
+
+/* Maroon Submit Button */
+.dealer {
+    margin-top: 25px;
+    background-color: #800000; /* Maroon Color */
+    color: #ffffff !important;
+    padding: 12px 55px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(128, 0, 0, 0.2);
+}
+
+.dealer-submit:hover {
+    background-color: #a00000;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(128, 0, 0, 0.3);
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+}
+
+/* Map Styling */
+.dealer-map {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    height: 250px;
+}
+
+/* Input Fields - Border Bottom Style */
+.dealer-form-box input, .dealer-form-box textarea {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.dealer-submit {
+    background-color: #5d8cb3; /* Light blue from reference */
+    color: white;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.modern-map-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(234, 39, 39, 0.1);
+    border: 1px solid #eee;
+    margin-top: 10px;
+}
+
+/* Floating Info Box sa ibabaw ng Map */
+.map-label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(187, 29, 5, 0.9); /* Brand Dark Blue */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    z-index: 5;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 15px rgba(238, 234, 234, 0.2);
+    pointer-events: none;
+}
+
+.map-label strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.map-label span {
+    opacity: 0.8;
+    font-size: 0.75rem;
+}
+
+/* Grayscale Map Filter para sa Modernong Look */
+.modern-map-wrapper iframe {
+    filter: grayscale(100%) brightness(1.0) contrast(1.1);
+    transition: 0.5s ease;
+}
+
+.modern-map-wrapper:hover iframe {
+    filter: grayscale(0%); /* Lilitaw ang kulay pag tinapatan ng mouse */
+}
+
+/* Floating Directions Button */
+.get-directions-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: #cb161f; /* Brand Red */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    z-index: 5;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(232, 6, 18, 0.3);
+}
+
+.get-directions-btn:hover {
+    background: #d1d7e3;
+    transform: translateY(-3px);
+}
