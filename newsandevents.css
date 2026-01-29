@@ -1,0 +1,1055 @@
+/* ==========================================================================
+   1. VARIABLES & RESET
+   ========================================================================== */
+:root {
+    --primary-color: #E21B24;
+    --dark-color: #222;
+    --light-color: #f4f4f4;
+    --white: #ffffff;
+    --nav-height: 70px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION (DESKTOP)
+   ========================================================================== */
+.top-bar {
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 0.85rem;
+    padding: 8px 0;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+header {
+    background: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--nav-height);
+}
+
+.logo img {
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+
+/* Nav Desktop */
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0 15px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: var(--nav-height);
+    display: block;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--primary-color);
+}
+
+/* Sub-menu Desktop (Hover) */
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    min-width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: none; /* Tago muna */
+    flex-direction: column;
+}
+
+/* Desktop Hover logic */
+@media (min-width: 769px) {
+    .has-dropdown:hover .sub-menu {
+        display: flex;
+    }
+    .sub-menu li a {
+        line-height: 45px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+}
+
+.menu-toggle {
+    display: none;
+}
+
+
+
+/* ==========================================================================
+   MOBILE NAVIGATION - NO GRAY OVERLAY & RIGHT ALIGNED
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+    /* Side Panel - Ngayon ay nasa KANAN na */
+    nav#main-nav {
+        position: fixed !important;
+        top: 70px; /* Sukat ng header height mo */
+        right: -100%; /* Nakatago sa kanang labas ng screen */
+        left: auto;   /* Siguraduhing hindi naka-set sa left */
+        width: 280px;
+        height: calc(100vh - 70px); 
+        background: #ffffff !important;
+        z-index: 999; 
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+        display: block !important;
+        overflow-y: auto;
+        
+    }
+.has-dropdown {
+        position: relative;
+    }
+    /* Pag lumabas ang menu, papasok siya galing kanan */
+    nav#main-nav.active {
+        right: 0 !important;
+    }
+
+    /* Overlay - Ginawang transparent para clickable ang paligid */
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent; 
+        z-index: 998;
+        display: none;
+    }
+
+    .menu-overlay.active {
+        display: block;
+    }
+
+    /* Alignment ng text at arrow */
+    nav ul li a {
+        display: flex !important;
+        justify-content: space-between; 
+        align-items: center;
+        padding: 18px 25px;
+        text-align: left;
+    }
+}
+
+    /* Ilipat ang dropdown list sa kanan */
+    .sub-menu {
+        position: absolute;
+        top: 100%;       /* Lalabas sa ilalim ng Products text */
+        right: 0;        /* Ito ang maglilipat sa kanya sa gawing kanan */
+        left: auto;      /* I-reset ang left alignment */
+        min-width: 200px;
+        background: #ffffff;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+        z-index: 1000;
+        display: none;    /* Tago muna, lalabas lang pag clinick */
+    }
+
+    .sub-menu.open {
+        display: block !important;
+    }
+
+    /* Alignment ng bawat item sa loob */
+    .sub-menu li a {
+        text-align: right; /* Kung gusto mo pati text ay nasa kanan */
+        padding: 12px 20px;
+        display: block;
+    }
+
+    /* Arrow Icon Rotation */
+    .active-drop i {
+        transform: rotate(180deg);
+        transition: 0.3s;
+    }
+
+
+/* Header fix para hindi lumubog ang logo */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000 !important;
+    background: #ffffff;
+    height: 70px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Oswald:wght@700&display=swap');
+
+.main-hero-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Background Logic */
+.background-slider, .bg-slide {
+    position: absolute;
+    inset: 0;
+}
+.bg-slide {
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+.bg-slide.active { opacity: 1; }
+
+/* Static Overlays */
+.static-content {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, transparent 60%);
+}
+
+/* Pinaliit na Hero Text */
+.hero-text-area {
+    padding-left: 8%;
+    color: #fff;
+    margin-bottom: 30px;
+}
+.hero-text-area .sub-title {
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    margin-bottom: 5px;
+}
+.hero-text-area h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+.btn-modern {
+    display: inline-block;
+    padding: 10px 25px;
+    background: #bd1818;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+}
+
+/* Modern Centered Categories */
+.categories-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.glass-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    max-width: 900px; /* Eksaktong size para sa 3 items */
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+}
+
+.cat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 15px;
+    text-decoration: none;
+    border-right: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s;
+}
+.cat-card:last-child { border-right: none; }
+.cat-card:hover { background: rgba(232, 10, 10, 0.05); }
+
+.img-box {
+    height: 95px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+.img-box img {
+    height: 115%;
+    object-fit: contain;
+    transition: 0.5s ease;
+}
+/* MOBILE SIDE-SCROLLING OPTIMIZATION (768px and below) */
+@media (max-width: 768px) {
+    /* 1. Header & Hero Adjustments */
+    .hero-text-area h1 {
+        font-size: 1.8rem;
+        padding: 0 10px;
+    }
+
+    /* 2. Side-Scrolling Container */
+    .categories-container {
+        padding-bottom: 20px;
+    }
+
+    .glass-grid, .cat-grid-centered {
+        display: flex; /* Mula Grid, gawing Flex */
+        overflow-x: auto; /* Enable horizontal scroll */
+        scroll-snap-type: x mandatory; /* Para mag-snap ang card sa gitna */
+        gap: 15px;
+        padding: 0 20px 15px 20px; /* Space sa gilid para makita ang susunod na card */
+        background: transparent; /* Alisin ang background ng main container */
+        backdrop-filter: none;
+        border: none;
+        scrollbar-width: none; /* Itago ang scrollbar sa Firefox */
+    }
+
+    .glass-grid::-webkit-scrollbar {
+        display: none; /* Itago ang scrollbar sa Chrome/Safari */
+    }
+
+    /* 3. Individual Cards as Swipeable Items */
+    .cat-card, .cat-item {
+        flex: 0 0 75%; /* Ang bawat card ay sasakop ng 75% ng screen width */
+        scroll-snap-align: center; /* Snap effect */
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        flex-direction: column; /* Image sa taas, Text sa baba */
+        align-items: center;
+        padding: 25px 15px;
+    }
+
+    .cat-card:last-child {
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .img-box, .product-img {
+        height: 100px !important;
+        margin-bottom: 15px;
+    }
+
+    .brand-name {
+        font-size: 1.1rem;
+    }
+
+    /* 4. Contact Footer Adjustment */
+    .info-strip, .contact-footer {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.7rem;
+    }
+}
+@media (max-width: 768px) {
+    /* Siguraduhin na hindi mag-wrap o mag-scroll ang grid */
+    .glass-grid, .cat-grid-centered {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Pinipilit na maging 3 columns */
+        width: 95%; /* Konting allowance sa gilid */
+        margin: 0 auto;
+        gap: 5px; /* Pinaliit ang gap para kumasya */
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: 10px;
+        padding: 10px 5px;
+    }
+
+    /* Pinaliit ang bawat card */
+    .cat-card, .cat-item {
+        display: flex;
+        flex-direction: column; /* Icon sa taas, Text sa baba para tipid sa lapad */
+        align-items: center;
+        justify-content: center;
+        padding: 10px 5px;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    .cat-card:last-child {
+        border-right: none;
+    }
+
+    /* Image adjustment para sa siksik na row */
+    .img-box {
+        height: 40px !important; /* Pinaliit para kumasya sa isang row */
+        margin-bottom: 8px;
+    }
+
+    .img-box img, .product-img {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+    }
+
+    /* Text adjustment - kailangang maliit lang para hindi mag-wrap */
+    .brand-name {
+        font-size: 0.65rem; /* Pinaliit ang font size */
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        white-space: nowrap; /* Iwasan ang pag-cut ng text */
+    }
+
+    /* Itago ang sub-text sa mobile para malinis tignan */
+    .cat-label p {
+        display: none; 
+    }
+}
+/* Label Section */
+.cat-label { text-align: center; color: #fff; }
+.brand-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: #fff;
+    display: block;
+}
+.cat-label p { font-size: 0.7rem; opacity: 0.7; margin: 0; }
+
+.cat-card:hover .img-box img { transform: translateY(-8px) scale(1.1); }
+
+/* Bottom Info Strip */
+.info-strip {
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 8px 0;
+    font-size: 0.75rem;
+}
+.divider { width: 1px; height: 15px; background: #ccc; }
+
+.services-section {
+    padding: 80px 10%;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 50px;
+    color: #0b1d44;
+    text-transform: uppercase;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Card Styling */
+.service-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none; /* Alisin ang underline ng link */
+    color: inherit;
+    display: block;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Image Zoom Effect */
+.service-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-info {
+    padding: 25px;
+    text-align: left;
+}
+
+.service-info h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.learn-more {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #171716; /* Goodyear Yellow */
+    transition: color 0.3s;
+}
+
+/* HOVER EFFECTS */
+.service-card:hover {
+    transform: translateY(-15px); /* Card lifts up */
+    box-shadow: 0 20px 40px rgba(5, 4, 4, 0.868);
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.1); /* Image zooms in slightly */
+}
+
+.service-card:hover .learn-more {
+    color: #cc110ef9; /* Yellow turns to Navy blue */
+}
+
+.site-footer {
+     background-size: cover; 
+    width: 100%;
+    background-color: #1a1a1a; /* Dark background */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    display: block;
+    position: relative; /* Importante para gumana ang z-index */
+    z-index: 9999;      /* Pinakamataas para takpan ang timeline line */
+    margin-top: -1px;   /* "Sub-pixel fix" para walang kahit anong puting guhit */
+}
+
+/* 1. Contact Bar (Top Bar) */
+.footer-contact-bar {
+    width: 100%;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+    padding: 30px 0;
+}
+
+.footer-grid-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: #cccccc;
+}
+
+.contact-item h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.contact-item p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+/* 2. Main Footer Content */
+.footer-main {
+    padding: 60px 0;
+}
+
+.footer-grid-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    align-items: start;
+}
+
+.footer-title {
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.footer-logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #aaaaaa;
+}
+
+/* Lists and Links */
+.footer-services, .footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-services li, .footer-links li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+.footer-links a {
+    color: #aaaaaa;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    padding-left: 5px;
+}
+
+/* Social Icons & Tire Image */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.footer-tires-img {
+    max-width: 150px;
+    height: auto;
+}
+
+/* 3. Copyright Section */
+.footer-copyright {
+    background-color: #000000;
+    padding: 20px 0;
+    border-top: 1px solid #222;
+}
+
+.footer-copyright p {
+    margin: 0;
+    font-size: 13px;
+    color: #666666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-grid-top {
+        flex-direction: column;
+    }
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    nav { display: none; width: 100%; }
+    nav.active { display: block; position: absolute; top: 100%; left: 0; background: var(--white); }
+    nav ul { flex-direction: column; }
+    .hero h2 { font-size: 2.2rem; }
+    .top-bar .container { flex-direction: column; text-align: center; gap: 5px; }
+}
+
+/* Hero Section */
+.about-hero {
+    background: linear-gradient(rgba(0, 45, 98, 0.8), rgba(0, 45, 98, 0.8)), 
+                url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1500');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.breadcrumb {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.about-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+/* Intro */
+.intro-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.intro-section h2 {
+    font-size: 2.5rem;
+    color: var(--goodyear-blue);
+    margin-bottom: 20px;
+}
+
+.intro-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-gray);
+}
+
+/* Feature Blocks */
+.feature-block {
+    padding: 100px 0;
+}
+
+.bg-light { background-color: var(--bg-light); }
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.grid-2.reverse .image-content { order: 1; }
+.grid-2.reverse .text-content { order: 2; }
+
+.eyebrow {
+    color: var(--goodyear-blue);
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+
+.text-content h3 {
+    font-size: 2.2rem;
+    margin: 15px 0;
+    color: var(--goodyear-blue);
+}
+
+.image-content img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.btn-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: var(--goodyear-blue);
+    font-weight: 700;
+    border-bottom: 2px solid var(--goodyear-yellow);
+    padding-bottom: 5px;
+    transition: 0.3s;
+}
+
+.btn-link:hover {
+    color: var(--#ff3700);
+}
+
+/* Values Section */
+.values-section {
+    padding: 80px 0;
+    background: var(--goodyear-blue);
+    color: white;
+    text-align: center;
+}
+
+.values-section h3 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.value-card {
+    padding: 30px;
+    background: rgba(255,255,255,0.05);
+}
+
+.icon-box {
+    font-size: 2.5rem;
+    color: var(--#ff3700);
+    margin-bottom: 20px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+    .grid-2.reverse .text-content { order: 1; }
+    .grid-2.reverse .image-content { order: 2; }
+    .about-hero h1 { font-size: 2.5rem; }
+}
+/*aboutus tab */
+/* Intro Section Styling */
+.intro-section {
+    background-color: #f4f5f7; /* Light gray background gaya ng screenshot */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.intro-container {
+    max-width: 900px; /* Mas makitid para maganda ang bagsak ng text */
+    margin: 0 auto;
+}
+
+.intro-section h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #000000;
+    line-height: 1.1;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+}
+
+.intro-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    font-weight: 400;
+}
+/* Eto ang code para sa background image */
+.modern-hero {
+    width: 100%;
+    height: 600px; /* Taas ng banner */
+    
+    /* BACKGROUND IMAGE CODE */
+    background-image: url('picture/leaobg.jpg'); /* <-- PALITAN MO ITO NG FILENAME NG PICTURE MO */
+    background-size: cover;      /* Pinupuno ang buong space ng banner */
+    background-position: center; /* Pinapagitna ang focus ng litrato */
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* Gawing 'fixed' kung gusto mo ng parallax effect */
+    
+    position: relative;
+    display: block;
+}
+
+/* Overlay para magmukhang modern at mabasa ang text */
+.hero-overlay {
+    width: 100%;
+    height: 100%;
+    /* Gradient: Nagpapadilim sa kaliwa para lumitaw ang puting text */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    padding-left: 10%;
+    color: #ffffff;
+}
+
+.hero-container h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.hero-container p {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    opacity: 0.9;
+}
+
+/* Sub-Menu Styling */
+.sub-menu-bar {
+    background-color: #ffffff;
+    border-bottom: 2px solid #f0f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.sub-menu-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sub-menu-list a {
+    display: block;
+    padding: 22px 25px;
+    text-decoration: none;
+    color: #0b1d44;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+/* Ang Yellow Indicator */
+.sub-menu-list li.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: #ff3700;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f5f7;
+}
+
+
+/* Container Layout */
+.news-section { background-color: #f0f2f5; padding: 60px 0; font-family: 'Segoe UI', sans-serif; }
+.news-flex { display: flex; gap: 30px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.news-feed { flex: 2.5; }
+.news-sidebar { flex: 1; }
+
+.section-title { font-size: 1.8rem; margin-bottom: 30px; color: #333; font-weight: 700; }
+
+/* MODERN NEWS CARD */
+.news-card {
+    display: flex;
+    background: #fff;
+    border-radius: 20px; /* Modern Rounded Corners */
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Soft Shadow */
+    overflow: hidden;
+    transition: 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.8);
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* Image Section */
+.news-card-img {
+    width: 35%;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.news-card:hover .news-card-img img { transform: scale(1.08); }
+
+/* Badge Overlay */
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 15px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+}
+.badge-events { background: #E21B24; }
+.badge-news { background: #1a1a1a; }
+
+/* Body Section */
+.news-card-body { padding: 25px; width: 65%; }
+.news-card-body h3 { font-size: 1.4rem; margin: 0 0 10px; color: #222; }
+.news-card-body .meta { font-size: 0.85rem; color: #888; margin-bottom: 15px; }
+.news-card-body .description { color: #555; line-height: 1.6; font-size: 0.95rem; margin-bottom: 20px; }
+
+.read-story { color: #007bff; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+.read-story:hover { color: #E21B24; }
+
+/* SIDEBAR & MODERN BUTTON */
+.sidebar-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+}
+
+.red-line { width: 40px; height: 3px; background: #E21B24; margin: 10px 0 20px; }
+
+/* MODERN SEE MORE BUTTON */
+.modern-see-more {
+    display: block;
+    background: #E21B24; /* Brand Red */
+    color: #fff;
+    text-align: center;
+    padding: 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 20px;
+    box-shadow: 0 10px 20px rgba(226, 27, 36, 0.2);
+    transition: 0.3s;
+}
+
+.modern-see-more:hover {
+    background: #c2151d;
+    transform: scale(1.02);
+    box-shadow: 0 15px 25px rgba(226, 27, 36, 0.3);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .news-flex { flex-direction: column; }
+    .news-card { flex-direction: column; }
+    .news-card-img, .news-card-body { width: 100%; }
+    .news-card-img { height: 200px; }
+}

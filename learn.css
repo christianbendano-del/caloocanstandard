@@ -1,0 +1,349 @@
+/* ==========================================================================
+   1. VARIABLES & RESET
+   ========================================================================== */
+:root {
+    --primary-color: #E21B24;
+    --dark-color: #222;
+    --light-color: #f4f4f4;
+    --white: #ffffff;
+    --nav-height: 70px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION (DESKTOP)
+   ========================================================================== */
+.top-bar {
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 0.85rem;
+    padding: 8px 0;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+header {
+    background: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--nav-height);
+}
+
+.logo img {
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+
+/* Nav Desktop */
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0 15px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: var(--nav-height);
+    display: block;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--primary-color);
+}
+
+/* Sub-menu Desktop (Hover) */
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    min-width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: none; /* Tago muna */
+    flex-direction: column;
+}
+
+/* Desktop Hover logic */
+@media (min-width: 769px) {
+    .has-dropdown:hover .sub-menu {
+        display: flex;
+    }
+    .sub-menu li a {
+        line-height: 45px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+}
+
+.menu-toggle {
+    display: none;
+}
+
+
+
+/* ==========================================================================
+   MOBILE NAVIGATION - NO GRAY OVERLAY & RIGHT ALIGNED
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+    /* Side Panel - Ngayon ay nasa KANAN na */
+    nav#main-nav {
+        position: fixed !important;
+        top: 70px; /* Sukat ng header height mo */
+        right: -100%; /* Nakatago sa kanang labas ng screen */
+        left: auto;   /* Siguraduhing hindi naka-set sa left */
+        width: 280px;
+        height: calc(100vh - 70px); 
+        background: #ffffff !important;
+        z-index: 999; 
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+        display: block !important;
+        overflow-y: auto;
+        
+    }
+.has-dropdown {
+        position: relative;
+    }
+    /* Pag lumabas ang menu, papasok siya galing kanan */
+    nav#main-nav.active {
+        right: 0 !important;
+    }
+
+    /* Overlay - Ginawang transparent para clickable ang paligid */
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent; 
+        z-index: 998;
+        display: none;
+    }
+
+    .menu-overlay.active {
+        display: block;
+    }
+
+    /* Alignment ng text at arrow */
+    nav ul li a {
+        display: flex !important;
+        justify-content: space-between; 
+        align-items: center;
+        padding: 18px 25px;
+        text-align: left;
+    }
+}
+
+    /* Ilipat ang dropdown list sa kanan */
+    .sub-menu {
+        position: absolute;
+        top: 100%;       /* Lalabas sa ilalim ng Products text */
+        right: 0;        /* Ito ang maglilipat sa kanya sa gawing kanan */
+        left: auto;      /* I-reset ang left alignment */
+        min-width: 200px;
+        background: #ffffff;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+        z-index: 1000;
+        display: none;    /* Tago muna, lalabas lang pag clinick */
+    }
+
+    .sub-menu.open {
+        display: block !important;
+    }
+
+    /* Alignment ng bawat item sa loob */
+    .sub-menu li a {
+        text-align: right; /* Kung gusto mo pati text ay nasa kanan */
+        padding: 12px 20px;
+        display: block;
+    }
+
+    /* Arrow Icon Rotation */
+    .active-drop i {
+        transform: rotate(180deg);
+        transition: 0.3s;
+    }
+
+
+/* Header fix para hindi lumubog ang logo */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000 !important;
+    background: #ffffff;
+    height: 70px;
+}
+
+
+.site-footer {
+     background-size: cover; 
+    width: 100%;
+    background-color: #1a1a1a; /* Dark background */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    display: block;
+    position: relative; /* Importante para gumana ang z-index */
+    z-index: 9999;      /* Pinakamataas para takpan ang timeline line */
+    margin-top: -1px;   /* "Sub-pixel fix" para walang kahit anong puting guhit */
+}
+
+/* 1. Contact Bar (Top Bar) */
+.footer-contact-bar {
+    width: 100%;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+    padding: 30px 0;
+}
+
+.footer-grid-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: #cccccc;
+}
+
+.contact-item h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.contact-item p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+/* 2. Main Footer Content */
+.footer-main {
+    padding: 60px 0;
+}
+
+.footer-grid-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    align-items: start;
+}
+
+.footer-title {
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.footer-logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #aaaaaa;
+}
+
+/* Lists and Links */
+.footer-services, .footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-services li, .footer-links li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+.footer-links a {
+    color: #aaaaaa;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    padding-left: 5px;
+}
+
+/* Social Icons & Tire Image */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.footer-tires-img {
+    max-width: 150px;
+    height: auto;
+}
+
+/* 3. Copyright Section */
+.footer-copyright {
+    background-color: #000000;
+    padding: 20px 0;
+    border-top: 1px solid #222;
+}
+
+.footer-copyright p {
+    margin: 0;
+    font-size: 13px;
+    color: #666666;
+}
+
+
+
