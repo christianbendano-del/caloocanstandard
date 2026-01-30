@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1650px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -58,7 +58,7 @@ header .container {
 }
 
 .logo img {
-    height: 45px;
+    height: 55px;
     transition: transform 0.3s ease;
 }
 
@@ -864,7 +864,7 @@ header {
 /* Eto ang code para sa background image */
 .modern-hero {
     width: 100%;
-    height: 500px; /* Taas ng banner */
+    height: 600px; /* Taas ng banner */
     
     /* BACKGROUND IMAGE CODE */
     background-image: url('picture/[CSI]\ MRL\ Cover\ Photo.jpeg'); /* <-- PALITAN MO ITO NG FILENAME NG PICTURE MO */
@@ -903,6 +903,7 @@ header {
     margin-top: 5px;
     opacity: 0.9;
 }
+
 
 /* Sub-Menu Styling */
 .sub-menu-bar {
@@ -1293,3 +1294,75 @@ body {
 .modern-search-bar i {
     color: #999;
 }
+.contact-stack {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column-reverse; /* Pinapaangat ang listahan */
+    align-items: center; /* Iisang linya lang lahat */
+    z-index: 10000;
+}
+
+/* Main Button & Tooltip */
+.main-trigger {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    right: 80px; /* Sa kaliwa ng button lalabas ang text */
+    background: #c00d0d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    white-space: nowrap;
+    transition: 0.4s ease; /* Transition para sa pagkawala */
+}
+
+/* Base Style para sa Circles */
+.btn-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+     background-color: white;
+}
+
+.main-red { background: #ff1e1e; }
+
+/* Social Icons Wrapper */
+.social-icons-wrapper {
+    display: flex;
+    flex-direction: column-reverse; /* Iisang linya paangat */
+    gap: 15px;
+    margin-bottom: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px); /* Transition effect mula ilalim */
+    transition: 0.5s ease;
+}
+
+/* Kapag Clinick na (Active State) */
+.contact-stack.active .tooltip {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+   
+}
+
+.contact-stack.active .social-icons-wrapper {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    
+}
+
+.btn-circle img { width: 30px; height: 30px; }

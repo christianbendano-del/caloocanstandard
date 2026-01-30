@@ -1,0 +1,44 @@
+.thank-you-card {
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1); /* Modern soft shadow */
+    max-width: 500px;
+    width: 90%;
+}
+
+.success-icon {
+    font-size: 80px;
+    color: #28a745; /* Success Green */
+    margin-bottom: 20px;
+}
+
+.thank-you-card h1 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.thank-you-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.back-home-btn {
+    display: inline-block;
+    background: #800000; /* Maroon CSI Branding */
+    color: white;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.back-home-btn:hover {
+    background: #b30000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(128, 0, 0, 0.2);
+}

@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Pagpapadala
     if (mail($to, $email_subject, $body, $headers)) {
         // Pwede mong palitan ito ng redirect sa isang 'Thank You' page
-        echo "<script>alert('Message sent successfully!'); window.location.href='index.php';</script>";
+        echo "<script>alert('Message sent successfully!'); window.location.href='index.html';</script>";
     } else {
         echo "Error: Could not send message.";
     }

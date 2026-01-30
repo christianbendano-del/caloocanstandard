@@ -181,3 +181,7 @@ function filterBrands() {
         }
     });
 }
+function toggleModernContact() {
+    const stack = document.getElementById('contactStack');
+    stack.classList.toggle('active');
+}

@@ -13,29 +13,29 @@
 </head>
 <body>
 
-    <div class="top-bar">
-        <div class="container">
-            <div class="contact-info">
-                <span><i class="fas fa-phone"></i> 8363-8081</span>
-                <span><i class="fas fa-envelope"></i> caloocanstandardinc@yahoo.com.ph</span>
-            </div>
-            <div class="hours">
-                <i class="fas fa-clock"></i> Mon-Sat: 08:00 - 17:00
-            </div>
+   <div class="top-bar">
+    <div class="container top-bar-flex">
+        <div class="contact-info">
+            <span><i class="fas fa-phone"></i> 8363-8081</span>
+            <span><i class="fas fa-envelope"></i> caloocanstandardinc@yahoo.com.ph</span>
+        </div>
+        <div class="hours">
+            <i class="fas fa-clock"></i> Mon-Sat: 08:00 - 17:00
         </div>
     </div>
+</div>
 
 <header>
     <div class="container header-content">
         <div class="logo">
-            <a href="index.html"><img src="picture/csilogo.png" alt="CSI Logo"></a>
+            <a href="index.html">
+                <img src="picture/csilogo.png" alt="CSI Logo">
+            </a>
         </div>
 
         <nav id="main-nav">
             <ul class="nav-links">
-                
-                <li class="active"><a href="index.html"class="active">Home</a></li>
-                
+                <li class="active"><a href="index.html" class="active">Home</a></li>
                 <li class="has-dropdown">
                     <a href="javascript:void(0)" class="dropdown-toggle">
                         Products <i class="fas fa-chevron-down"></i>
@@ -45,15 +45,11 @@
                         <li><a href="batteries.html">Batteries</a></li>
                         <li><a href="lubricants.html">Lubricants</a></li>
                         <li><a href="tubeandflaps.html">Others</a></li>
-                        
                     </ul>
                 </li>
-
                 <li><a href="about.html">About Us</a></li>
-                
-               
-                    <li><a href="newsandevents.html">News & Events</a></li>
-                     <li><a href="beadealer.html">Be a Delear</a></li>
+                <li><a href="newsandevents.html">News & Events</a></li>
+                <li><a href="beadealer.html">Be a Dealer</a></li>
             </ul>
         </nav>
 
@@ -63,7 +59,14 @@
     </div>
 </header>
 <div class="menu-overlay" id="menu-overlay"></div>
-
+<section class="modern-hero">
+    <div class="hero-overlay">
+        <div class="hero-container">
+            <h1>Tires</h1>
+            <p>Driving the future of transportation since 1898.</p>
+        </div>
+    </div>
+</section>
 <section class="product-categories">
     <div class="container">
         <h2 class="category-title">CATEGORIES</h2>
@@ -113,7 +116,21 @@
     </div>
   
 </section>
+<div class="contact-stack" id="contactStack">
+    <div class="main-trigger" onclick="toggleModernContact()">
+        <div class="tooltip" id="helpTooltip">Hello! How can we help you?</div>
+        <div class="btn-circle"><img src="picture/operator.png">
+            <span class="icon-bar"></span>
+        </div>
+    </div>
 
+    <div class="social-icons-wrapper">
+        <a href="viber://chat?number=+63998816400" class="btn-circle viber"><img src="picture/viber.png"></a>
+        <a href="https://www.messenger.com/t/104591254588832" class="btn-circle messenger"><img src="picture/messenger.png"></a>
+        <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlFllzcchmgMBZBpmWvNtfcBNlLlXPNxZbtBQNnMCXNqZqXlFXzLDlFfxTnGzKMPRqmXJB" class="btn-circle email"><img src="picture/communication.png"></a>
+       
+    </div>
+</div>
 <footer class="site-footer">
     <div class="footer-contact-bar">
         <div class="container footer-grid-top">

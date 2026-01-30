@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1650px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -31,25 +31,15 @@ body {
    2. HEADER & NAVIGATION (DESKTOP)
    ========================================================================== */
 .top-bar {
-    width: 100%; /* Gamitin ang buong lapad */
-    background-color: #e80a0a; /* Red color base sa logo mo */
-    color: white;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-around; /* O space-between depende sa gusto mo */
-    align-items: center;
-    font-size: 0.9rem;
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 0.85rem;
+    padding: 8px 0;
 }
 
 .top-bar .container {
-
-    width: 100%;
-    max-width: 1200px; /* Optional: para hindi masyadong magkalayo ang text sa malalaking screen */
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
-
 }
 
 header {
@@ -68,7 +58,7 @@ header .container {
 }
 
 .logo img {
-    height: 45px;
+    height: 55px;
     transition: transform 0.3s ease;
 }
 
@@ -224,7 +214,7 @@ header {
 
 .main-hero-wrapper {
     width: 100%;
-    height: 100vh;
+    height: 89vh;
     position: relative;
     overflow: hidden;
     background: #000;
@@ -262,20 +252,20 @@ header {
     margin-bottom: 200px;
 }
 .hero-text-area .sub-title {
-    font-size: 0.9rem;
+    font-size: 1.9rem;
     letter-spacing: 4px;
     margin-bottom: 5px;
 }
 .hero-text-area h1 {
     font-family: 'Oswald', sans-serif;
-    font-size: 2.8rem;
+    font-size: 3.8rem;
     text-transform: uppercase;
     line-height: 1;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 .btn-modern {
     display: inline-block;
-    padding: 10px 25px;
+    padding: 20px 50px;
     background: #bd1818;
     color: #fff;
     text-decoration: none;
@@ -782,143 +772,6 @@ body {
     background-color: #f4f5f7;
 }
 
-.timeline-section {
-    padding: 100px 0;
-    overflow-x: hidden;
-}
-
-.timeline-container {
-    position: relative;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.scroll-guide {
-    text-align: center;
-    color: #0b1d44;
-    letter-spacing: 2px;
-    margin-bottom: 80px;
-    font-size: 14px;
-}
-
-/* Vertical line sa gitna */
-.timeline-line {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    background-color: #0b1d44;
-    z-index: 1;.timeline-line {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 6px; /* Ginawa nating mas makapal para mas solid */
-    background-color: #0b1d44;
-    z-index: 1; /* LAYER 1 (Nasa ilalim) */
-}
-
-    /* ITO ANG PINAKA-SAFE NA SETTING */
-    top: 5%;
-    height: 75%; /* Gawin itong 80% o 85% para siguradong bitin siya sa dulo */
-
-}
-
-.timeline-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 300px; /* Malaking space para sa focus */
-    width: 100%;
-    position: relative;
-    opacity: 0.2; /* Malabo pag hindi tinitingnan */
-    transition: opacity 0.6s ease-in-out;
-    z-index: 100; /* LAYER 2 (Dapat mas mataas sa line) */
-}
-
-/* Salit-salit na layout (Left-Right) */
-.timeline-item:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
-.timeline-content, .timeline-image-box {
-    width: 44%;
-}
-
-.timeline-content {
-    text-align: right;
-}
-
-.timeline-item:nth-child(even) .timeline-content {
-    text-align: left;
-}
-
-.year-text {
-    font-size: 3.5rem;
-    font-weight: 900;
-    color: #0b1d44;
-    margin: 0 0 10px 0;
-}
-
-/* Bilog sa gitna */
-.timeline-dot {
-    position: absolute;
-    left: 50%;
-    top: 50%; /* Center relative to the item */
-    transform: translateX(-50%);
-    width: 25px;
-    height: 25px;
-    background-color: #ffffff; /* Puti sa simula */
-    border: 4px solid #0b1d44;
-    border-radius: 50%;
-    z-index: 1; /* LAYER 1 (Pinakailalim) */
-    transition: all 0.2s ease;
-    box-shadow: 0 0 0 4px #f4f5f7; /* Halo effect para may 'gap' sa pagitan ng line at dot */
-}
-
-/* ACTIVE STATE: Pag tumapat sa gitna */
-.timeline-item.active {
-    opacity: 1;
-}
-
-.timeline-item.active .timeline-dot {
-    background-color: #E21B24; /* Nagiging Pula */
-    transform: translateX(-50%) scale(1.4);
-    box-shadow: 0 0 15px rgba(226, 27, 36, 0.6);
-}
-
-/* Photo style */
-.circle-img-wrapper {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    border: 10px solid #ff3700; 
-    overflow: hidden;
-    margin: 0 auto;
-}
-
-.circle-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-/* Dagdag sa dulo ng timeline line */
-.timeline-line::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10px;
-    height: 10px;
-    background-color: #0b1d44;
-    border-radius: 50%;
-}
-@media (max-width: 768px) {
-    .timeline-line {
-        bottom: 250px; /* Mas malaking gap para sa mobile */
-    }
-}
-
 /* Container para sa Glass Box */
 .glass-grid {
     display: flex; /* Ginawang flex para maging straight line */
@@ -942,6 +795,7 @@ body {
     text-decoration: none;
     transition: transform 0.3s ease;
     flex: 1; /* Para pantay ang width ng apat na cards */
+    
 }
 
 .cat-card:hover {
@@ -951,18 +805,14 @@ body {
 /* Image Box Styling */
 .img-box {
     width: 100px; /* Sukat ng icon/larawan */
-    height: 100px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
 }
 
-.img-box img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
+
 
 /* Label Styling */
 .brand-name {
@@ -1025,11 +875,11 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
-    max-width: 850px; /* Pinaliit para mas modern at siksik */
+    max-width: 100%; /* Ginawang 100% para mas malaki ang images gaya ng gusto mo */
     background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: none; /* Tinanggal ang lahat ng border */
+    border: none;
     border-radius: 20px 20px 0 0;
     overflow: hidden;
     padding: 0;
@@ -1040,13 +890,15 @@ body {
 .cat-card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
-    padding: 20px 0 0 0; /* Zero padding sa baba para sagad ang picture */
+    padding: 30px 10px 0 10px; /* Space sa loob ng card */
     text-decoration: none;
-    height: 180px; /* Mas maliit na height para sa modernong look */
-    transition: background 0.3s ease;
-    border: none;
+    transition: 0.3s;
+    
+    /* SIDE BORDERS LANG */
+    border-left: 1px solid rgba(255, 255, 255, 0.2); 
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .cat-card:hover {
@@ -1078,7 +930,7 @@ body {
 .img-box img {
     width: auto;
     max-width: 120%;
-    max-height: 110px; /* Proportionate height para sa maliit na box */
+    max-height: 150px; /* Proportionate height para sa maliit na box */
     display: block !important; /* Critical: Tinatanggal ang default 3px gap */
     margin: 0 auto;
     
@@ -1107,3 +959,75 @@ body {
         max-height: 80px;
     }
 }
+.contact-stack {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column-reverse; /* Pinapaangat ang listahan */
+    align-items: center; /* Iisang linya lang lahat */
+    z-index: 10000;
+}
+
+/* Main Button & Tooltip */
+.main-trigger {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    right: 80px; /* Sa kaliwa ng button lalabas ang text */
+    background: #c00d0d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    white-space: nowrap;
+    transition: 0.4s ease; /* Transition para sa pagkawala */
+}
+
+/* Base Style para sa Circles */
+.btn-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+     background-color: white;
+}
+
+.main-red { background: #ff1e1e; }
+
+/* Social Icons Wrapper */
+.social-icons-wrapper {
+    display: flex;
+    flex-direction: column-reverse; /* Iisang linya paangat */
+    gap: 15px;
+    margin-bottom: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px); /* Transition effect mula ilalim */
+    transition: 0.5s ease;
+}
+
+/* Kapag Clinick na (Active State) */
+.contact-stack.active .tooltip {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+   
+}
+
+.contact-stack.active .social-icons-wrapper {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    
+}
+
+.btn-circle img { width: 30px; height: 30px; }

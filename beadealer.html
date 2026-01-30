@@ -63,6 +63,14 @@
     </div>
 </header>
 <div class="menu-overlay" id="menu-overlay"></div>
+<section class="modern-hero">
+    <div class="hero-overlay">
+        <div class="hero-container">
+            <h1>Be a Dealer</h1>
+            <p>Trusted Partners in Every Purchase</p>
+        </div>
+    </div>
+</section>
 
 <section class="dealer-section">
     <div class="dealer-container">
@@ -72,32 +80,32 @@
                 <div class="info-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
-                        <strong>Caloocan City Branch</strong>
+                        <strong>Caloocan Standard (Head Office)</strong>
                         <p>110 6th St, Grace Park East, Caloocan, Metro Manila</p>
                     </div>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
-                        <strong>Quezon City Branch</strong>
+                        <strong>Tyregetz Inc(Retail Partner)</strong>
                         <p>109 Calamba St, Santa Mesa Heights, Quezon City, Metro Manila</p>
                     </div>
                 </div>
             </div>
 
-            <h2 class="dealer-subtitle">Contact Number</h2>
+            
             <div class="info-grid">
                 <div class="info-item">
                     <i class="fas fa-phone-alt"></i>
                     <div>
-                        <strong>Caloocan City Branch</strong>
+                        <strong>Contact Number</strong>
                         <p>(032) 505-5851 up to 54<br>(0917) 835-5884 mobile</p>
                     </div>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-phone-alt"></i>
                     <div>
-                        <strong>Quezon City Branch</strong>
+                        <strong>Contact Number</strong>
                         <p>(02)83638081<br>(0917) 306-1060 mobile</p>
                     </div>
                 </div>
@@ -105,31 +113,71 @@
             
             <h2 class="dealer-subtitle">Social Media</h2>
             <ul class="dealer-socials">
-                <li><i class="fab fa-facebook"></i> Leao Tires PH</li>
-                <li><i class="fab fa-facebook"></i> MRL Tires PH</li>
-                <li><i class="fab fa-facebook"></i> MegaForce Battery PH</li>
+            <li><a href="#"><i class="fab fa-facebook"></i>Leao Tires PH</li>
+            <li><a href="#"><i class="fab fa-facebook"></i>MRL Tires PH</li>
+            <li><a href="#"><i class="fab fa-facebook"></i>Caloocan Standard </li>
             </ul>
         </div>
 
      <div class="dealer-form-box">
-    <h3 class="form-title">We're here to help!</h3>
-    <p>Fill out the form with any query on your mind.</p>
-    
-    <form action="send_inquiry.php" method="POST">
-        <div class="form-row">
-            <input type="text" name="first_name" placeholder="First Name *" required>
-            <input type="text" name="last_name" placeholder="Last Name *" required>
+            <div class="form-header">
+                <h3 class="form-title">We're here to help!</h3>
+                <p>Fill out the form with any query on your mind.</p>
+            </div>
+            
+            <form action="https://formspree.io/f/xojwpwaj" method="POST">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <input type="text" name="first_name" required placeholder=" ">
+                        <label>First Name *</label>
+                        <div class="line"></div>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="last_name" required placeholder=" ">
+                        <label>Last Name *</label>
+                        <div class="line"></div>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="input-group">
+                        <input type="email" name="email" required placeholder=" ">
+                        <label>Email *</label>
+                        <div class="line"></div>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" name="contact_number" required placeholder=" ">
+                        <label>Contact Number *</label>
+                        <div class="line"></div>
+                    </div>
+                </div>
+
+                <div class="input-group full-width">
+                    <input type="text" name="subject" placeholder=" ">
+                    <label>Subject</label>
+                    <div class="line"></div>
+                </div>
+
+                <div class="input-group full-width">
+                    <textarea name="message" rows="4" required placeholder=" "></textarea>
+                    <label>Message *</label>
+                    <div class="line"></div>
+                </div>
+
+                <div class="captcha-box">
+                    <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+                </div>
+
+                <button type="submit" class="modern-btn">
+                    <span>Submit Inquiry</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
         </div>
-        <div class="form-row">
-            <input type="email" name="email" placeholder="Email *" required>
-            <input type="text" name="subject" placeholder="Subject">
-        </div>
-        <textarea name="message" placeholder="Message" rows="3" required></textarea>
+
         
-        <button type="submit" class="dealer">Submit</button>
-    </form>
-
-
+</section>
+</div>
     <div class="modern-map-wrapper">
         <div class="map-label">
             <strong>Caloocan Standard Inc. Main Office</strong>
@@ -145,9 +193,24 @@
         <a href="https://www.google.com/maps/place/Caloocan+Standard+Incorporated/@14.6447599,120.9701118,15z/data=!3m1!4b1!4m6!3m5!1s0x3397b16d4e980757:0xab2b3523d851808e!8m2!3d14.6447399!4d120.9885659!16s%2Fg%2F11xxm96fj?hl=en&entry=ttu&g_ep=EgoyMDI2MDEyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="get-directions-btn">
             <i class="fas fa-directions"></i> Get Directions
         </a>
-    </div>
+    
 </div>
 </section>
+<div class="contact-stack" id="contactStack">
+    <div class="main-trigger" onclick="toggleModernContact()">
+        <div class="tooltip" id="helpTooltip">Hello! How can we help you?</div>
+        <div class="btn-circle"><img src="picture/operator.png">
+            <span class="icon-bar"></span>
+        </div>
+    </div>
+
+    <div class="social-icons-wrapper">
+        <a href="viber://chat?number=+63998816400" class="btn-circle viber"><img src="picture/viber.png"></a>
+        <a href="https://www.messenger.com/t/104591254588832" class="btn-circle messenger"><img src="picture/messenger.png"></a>
+        <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlFllzcchmgMBZBpmWvNtfcBNlLlXPNxZbtBQNnMCXNqZqXlFXzLDlFfxTnGzKMPRqmXJB" class="btn-circle email"><img src="picture/communication.png"></a>
+       
+    </div>
+</div>
  <footer class="site-footer">
     <div class="footer-contact-bar">
         <div class="container footer-grid-top">
