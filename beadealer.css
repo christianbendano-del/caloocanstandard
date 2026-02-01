@@ -552,9 +552,9 @@ header {
     padding-top: 4px;
 }
 
-/* --- SUBMIT BUTTON --- */
+/* Submit Button Style */
 .submit-app-btn {
-    background-color: #a00;
+    background-color: #a00; /* CSI Maroon */
     color: #fff;
     width: 100%;
     padding: 16px;
@@ -567,7 +567,8 @@ header {
     justify-content: center;
     align-items: center;
     gap: 12px;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    margin-top: 20px;
 }
 
 .submit-app-btn:hover {
@@ -576,9 +577,14 @@ header {
     box-shadow: 0 8px 20px rgba(160, 0, 0, 0.2);
 }
 
-/* --- MODAL POP-UP --- */
+.submit-app-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Modal Pop-up Overlay */
 .modal-overlay {
-    display: none;
+    display: none; /* Hidden by default */
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
@@ -589,6 +595,7 @@ header {
     backdrop-filter: blur(5px);
 }
 
+/* Pop-up Box */
 .modal-content {
     background: #fff;
     padding: 40px;
@@ -596,7 +603,27 @@ header {
     text-align: center;
     max-width: 400px;
     width: 90%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
     animation: popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.modal-icon {
+    font-size: 4rem;
+    color: #28a745; /* Success Green */
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    background: #a00;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: 700;
+    width: 100%;
+    transition: 0.3s;
 }
 
 @keyframes popIn {
