@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caloocan Standard Inc. | The Right Tire Changes Everything!</title>
-    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="joinus.css">
      <link rel="icon" type="image/png" href="picture/csiicon.png">
     
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -66,39 +66,95 @@
     <div class="hero-overlay">
         <div class="hero-container">
             <h1>Others</h1>
-            <p>Establishing the GOLD standard in the automotive industry— Our Caloocan way.</p>
+            <p>Career in Motion</p>
         </div>
     </div>
+    <nav class="sub-menu-bar">
+    <div class="sub-menu-container">
+        <div class="custom-select-box" id="subToggle">
+            <span>About us</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+
+        <ul class="sub-menu-list" id="subMenuList">
+            <li ><a href="about.html">Who We Are</a></li>
+            <li><a href="missionandvision.html">Mission & Vision</a></li>
+            <li class="active"><a href="joinus.html">Join Us</a></li>
+        </ul>
+    </div>
+</nav>
 </section>
-<section class="product-categories">
-    <div class="container">
-        <h2 class="category-title">CATEGORIES</h2>
-        
-       <div class="category-nav-wrapper">
-            <div class="mobile-select-trigger" id="categoryToggle">
-                <span id="current-category-name">Tires</span> <i class="fas fa-chevron-down"></i>
+<section class="join-us-section">
+    <div class="application-container">
+        <div class="form-header-box">
+            <h2 class="form-title">Join Our Team</h2>
+            <p>We are looking for dedicated individuals to fill our team</p>
+        </div>
+
+        <form id="my-form" action="https://formspree.io/f/xlgldlkj" method="POST">
+            <div class="input-group full-width">
+                <label>Position Applying For *</label>
+                <select name="position" required class="modern-select">
+                    <option value="" disabled selected>Select a position</option>
+                    <option value="Secretary">Secretary</option>
+                    <option value="Company Driver">Company Driver</option>
+                    <option value="Warehouse Helper">Warehouse Helper</option>
+                </select>
             </div>
 
-            <div class="category-tabs" id="categoryMenu">
-                <a href="tires.html" class="tab-btn">Tires</a>
-                <a href="batteries.html" class="tab-btn">Batteries</a>
-                <a href="lubricants.html" class="tab-btn">Lubricants</a>
-                <a href="tubeandflaps.html" class="tab-btn active">Others</a>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Full Name *</label>
+                    <input type="text" name="full_name" required placeholder="Juan Dela Cruz">
+                </div>
+                <div class="input-group">
+                    <label>Contact Number *</label>
+                    <input type="tel" name="phone" required placeholder="0917XXXXXXX">
+                </div>
             </div>
-        </div>
- <div class="middle-search-wrapper">
-            <div class="modern-search-bar">
-                <i class="fas fa-search"></i>
-                <input type="text" id="brandSearch" placeholder="Search brands..." onkeyup="filterBrands()">
+
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Email Address *</label>
+                    <input type="email" name="email" required placeholder="example@mail.com">
+                </div>
+                <div class="input-group">
+                    <label>Years of Experience *</label>
+                    <input type="number" name="experience" required placeholder="e.g. 2">
+                </div>
             </div>
+
+          <div class="input-group full-width">
+                <label>Link to your Resume (Google Drive / Dropbox) *</label>
+                <div class="link-input-wrapper">
+                    <i class="fas fa-link link-icon"></i>
+                    <input type="url" name="resume_link" required placeholder="https://drive.google.com/your-resume-link">
+                </div>
+                <p class="file-hint">Note: Please ensure the link is set to "Anyone with the link can view".</p>
+            </div>
+
+            <div class="input-group full-width">
+                <label>Why should we hire you? (Short Bio) *</label>
+                <textarea name="cover_letter" rows="4" required placeholder="Tell us about your skills..."></textarea>
+            </div>
+
+           
+        <button type="submit" id="submit-button" class="submit-app-btn">
+    <span>Submit Application</span>
+    <i class="fas fa-paper-plane"></i>
+</button>
+
+<div id="thankYouModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-icon">
+            <i class="fas fa-check-circle"></i>
         </div>
-        <div class="product-grid" id="tires-grid">
-    <a href="#" class="brand-card">
-        <div class="brand-img-box"><img src="picture/matrix-logo.png" alt="Others"></div>
-    </a>
-    
-</div>
+        <h2>Application Received!</h2>
+        <p>Thank you for applying. Your application has been received. Our HR team will reach out to you via phone or email for the next steps.</p>
+        <button onclick="closeModal()" class="close-btn">Close</button>
     </div>
+</div>
+
 </section>
 <div class="contact-stack" id="contactStack">
     <div class="main-trigger" onclick="toggleModernContact()">
@@ -111,12 +167,12 @@
     <div class="social-icons-wrapper">
         <a href="viber://chat?number=+639998816400" class="btn-circle viber"><img src="picture/viber.png"></a>
         <a href="https://www.messenger.com/t/104591254588832" class="btn-circle messenger"><img src="picture/messenger.png"></a>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Sales@caloocanstandard.com" 
+     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Sales@caloocanstandard.com" 
        target="_blank" 
        rel="noopener noreferrer" 
        class="btn-circle email">
         <img src="picture/communication.png" alt="Gmail">
-    </a> 
+    </a>
     </div>
 </div>
 <footer class="site-footer">
@@ -196,7 +252,7 @@
         </div>
     </div>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

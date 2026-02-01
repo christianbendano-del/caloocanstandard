@@ -116,22 +116,22 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log("Sub-menu is now: " + (menu.classList.contains('is-open') ? "OPEN" : "CLOSED"));
         };
 
-        // Isara pag clinick sa labas
+        
         document.addEventListener('click', function() {
             menu.classList.remove('is-open');
         });
     }
 });
 
-//product tab
+
 document.querySelectorAll('.tab-btn').forEach(button => {
     button.addEventListener('click', () => {
-        // Alisin ang active class sa lahat
+    
         document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-        // Idagdag sa pinindot
+   
         button.classList.add('active');
         
-        // Dito mo pwedeng i-filter yung grid kung may ibang data ka na
+        
         console.log("Switching to: " + button.innerText);
     });
 });
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const menu = document.getElementById('categoryMenu');
     const pageName = document.getElementById('current-category-name');
 
-    // Hanapin kung aling link ang active at i-update ang text sa mobile box
+    
     const activeLink = document.querySelector('.tab-btn.active');
     if (activeLink && pageName) {
         pageName.innerText = activeLink.innerText;
@@ -150,13 +150,11 @@ document.addEventListener("DOMContentLoaded", function() {
         toggle.addEventListener('click', function(e) {
             e.stopPropagation();
             menu.classList.toggle('show');
-            
-            // Rotate arrow icon
+           
             const icon = this.querySelector('i');
             icon.style.transform = menu.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
         });
 
-        // Isara ang menu pag nag-click sa labas
         document.addEventListener('click', () => {
             menu.classList.remove('show');
             if(toggle.querySelector('i')) toggle.querySelector('i').style.transform = 'rotate(0deg)';
@@ -169,7 +167,7 @@ function filterBrands() {
     let cards = document.querySelectorAll('.brand-card');
 
     cards.forEach(card => {
-        // Hahanapin ang name sa 'alt' attribute ng img sa loob ng card
+       
         let img = card.querySelector('img');
         if (img) {
             let brandName = img.alt.toLowerCase();
@@ -184,4 +182,76 @@ function filterBrands() {
 function toggleModernContact() {
     const stack = document.getElementById('contactStack');
     stack.classList.toggle('active');
+}
+const form = document.getElementById("my-form"); // Siguraduhing ang <form id="my-form">
+const modal = document.getElementById("thankYouModal");
+const btn = document.getElementById("submit-button");
+
+async function handleSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    
+    // Loading State
+    btn.disabled = true;
+    btn.innerHTML = "Sending...";
+
+    fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+    }).then(response => {
+        if (response.ok) {
+            // Ipakita ang Pop-up
+            modal.style.display = "flex";
+            form.reset();
+        } else {
+            alert("Oops! May problema sa pag-submit. Pakisubukang muli.");
+        }
+    }).catch(error => {
+        alert("Oops! May error sa koneksyon.");
+    }).finally(() => {
+        btn.disabled = false;
+        btn.innerHTML = "<span>Submit Application</span> <i class='fas fa-paper-plane'></i>";
+    });
+}
+
+function closeModal() {
+    modal.style.display = "none";
+}
+
+form.addEventListener("submit", handleSubmit);
+async function handleSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    
+    btn.disabled = true;
+    btn.innerHTML = "Sending...";
+
+    fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+    }).then(response => {
+        if (response.ok) {
+            // 1. Ipakita ang Pop-up
+            modal.style.display = "flex";
+            
+            // 2. FIRE THE CONFETTI!
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#a00', '#1a1a40', '#ffffff'] // Maroon, Dark Blue, and White
+            });
+
+            form.reset();
+        } else {
+            alert("Oops! May problema sa pag-submit.");
+        }
+    }).catch(error => {
+        alert("Oops! May error sa koneksyon.");
+    }).finally(() => {
+        btn.disabled = false;
+        btn.innerHTML = "<span>Submit Application</span> <i class='fas fa-paper-plane'></i>";
+    });
 }

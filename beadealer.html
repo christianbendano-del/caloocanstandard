@@ -44,7 +44,7 @@
                         <li><a href="tires.html">Tires</a></li>
                         <li><a href="batteries.html">Batteries</a></li>
                         <li><a href="lubricants.html">Lubricants</a></li>
-                        <li><a href="tubeandflaps.html">Tube and Flaps</a></li>
+                        <li><a href="tubeandflaps.html">Others</a></li>
                         
                     </ul>
                 </li>
@@ -67,134 +67,116 @@
     <div class="hero-overlay">
         <div class="hero-container">
             <h1>Be a Dealer</h1>
-            <p>Trusted Partners in Every Purchase</p>
+            <p>Moving Forward Together</p>
         </div>
     </div>
 </section>
-
-<section class="dealer-section">
+ <section class="dealer-section">
     <div class="dealer-container">
-        <div class="dealer-info">
-            <h2 class="dealer-subtitle">Location</h2>
-            <div class="info-grid">
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <strong>Caloocan Standard (Head Office)</strong>
-                        <p>110 6th St, Grace Park East, Caloocan, Metro Manila</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <strong>Tyregetz Inc(Retail Partner)</strong>
-                        <p>109 Calamba St, Santa Mesa Heights, Quezon City, Metro Manila</p>
-                    </div>
-                </div>
-            </div>
-
-            
-            <div class="info-grid">
-                <div class="info-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <div>
-                        <strong>Contact Number</strong>
-                        <p>(032) 505-5851 up to 54<br>(0917) 835-5884 mobile</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <div>
-                        <strong>Contact Number</strong>
-                        <p>(02)83638081<br>(0917) 306-1060 mobile</p>
-                    </div>
-                </div>
-            </div>
-            
-            <h2 class="dealer-subtitle">Social Media</h2>
-            <ul class="dealer-socials">
-            <li><a href="#"><i class="fab fa-facebook"></i>Leao Tires PH</li>
-            <li><a href="#"><i class="fab fa-facebook"></i>MRL Tires PH</li>
-            <li><a href="#"><i class="fab fa-facebook"></i>Caloocan Standard </li>
-            </ul>
-        </div>
-
-     <div class="dealer-form-box">
+        <div class="dealer-form-box">
             <div class="form-header">
-                <h3 class="form-title">We're here to help!</h3>
+                <h3 class="form-title">Start Your Dealership Today!</h3>
                 <p>Fill out the form with any query on your mind.</p>
             </div>
             
-            <form action="https://formspree.io/f/xojwpwaj" method="POST">
+          <form id="my-form" action="https://formspree.io/f/xlgldlkj" method="POST">
                 <div class="form-grid">
                     <div class="input-group">
-                        <input type="text" name="first_name" required placeholder=" ">
                         <label>First Name *</label>
-                        <div class="line"></div>
+                        <input type="text" name="first_name" required>
                     </div>
                     <div class="input-group">
-                        <input type="text" name="last_name" required placeholder=" ">
                         <label>Last Name *</label>
-                        <div class="line"></div>
+                        <input type="text" name="last_name" required>
                     </div>
                 </div>
-
                 <div class="form-grid">
                     <div class="input-group">
-                        <input type="email" name="email" required placeholder=" ">
                         <label>Email *</label>
-                        <div class="line"></div>
+                        <input type="email" name="email" required>
                     </div>
                     <div class="input-group">
-                        <input type="tel" name="contact_number" required placeholder=" ">
                         <label>Contact Number *</label>
-                        <div class="line"></div>
+                        <input type="tel" name="contact_number" required>
                     </div>
                 </div>
-
-                <div class="input-group full-width">
-                    <input type="text" name="subject" placeholder=" ">
+                <div class="input-group">
                     <label>Subject</label>
-                    <div class="line"></div>
+                    <input type="text" name="subject">
                 </div>
-
-                <div class="input-group full-width">
-                    <textarea name="message" rows="4" required placeholder=" "></textarea>
+                <div class="input-group">
                     <label>Message *</label>
-                    <div class="line"></div>
+                    <textarea name="message" rows="5" required></textarea>
                 </div>
+                <button type="submit" id="submit-button" class="submit-app-btn">
+    <span>Submit Application</span>
+    <i class="fas fa-paper-plane"></i>
+</button>
 
-                <div class="captcha-box">
-                    <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
-                </div>
-
-                <button type="submit" class="modern-btn">
-                    <span>Submit Inquiry</span>
-                    <i class="fas fa-paper-plane"></i>
-                </button>
+<div id="thankYouModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h2>Dealer Application Received!</h2>
+        <p>Thanks for reaching out! We’re excited about the possibility of working together. We’ve received your dealer application, and we'll be in touch soon to walk you through the next steps.</p>
+        <button onclick="closeModal()" class="close-btn">Close</button>
+    </div>
+</div>
             </form>
         </div>
+<div class="dealer-info-card">
+  <div class="modern-map-wrapper">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.032107871221!2d120.9855581!3d14.6541575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b5964e980757%3A0xab2b3523d851808e!2sCaloocan%20Standard%20Incorporated!5e0!3m2!1sen!2sph!4v1700000000000" 
+        width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
 
-        
-</section>
-</div>
-    <div class="modern-map-wrapper">
-        <div class="map-label">
-            <strong>Caloocan Standard Inc. Main Office</strong>
-            <span>110 6th St, Grace Park East, Caloocan City</span>
-        </div>
-        
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.0381395804554!2d120.985929675904!3d14.653787775765714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b5e40733d36b%3A0x6d11f04362a93798!2s110%206th%20St%2C%20Grace%20Park%20East%2C%20Caloocan%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1700000000000!5m2!1sen!2sph" 
-            width="100%" height="300" style="border:0; filter:sepia(30%) hue-rotate(310deg) saturate(120%) brightness(1.05) contrast(95%);" 
-            allowfullscreen="" loading="lazy">
-        </iframe>
-        
-        <a href="https://www.google.com/maps/place/Caloocan+Standard+Incorporated/@14.6447599,120.9701118,15z/data=!3m1!4b1!4m6!3m5!1s0x3397b16d4e980757:0xab2b3523d851808e!8m2!3d14.6447399!4d120.9885659!16s%2Fg%2F11xxm96fj?hl=en&entry=ttu&g_ep=EgoyMDI2MDEyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="get-directions-btn">
-            <i class="fas fa-directions"></i> Get Directions
+    <div class="map-overlay">
+        <a href="https://www.google.com/maps/place/Caloocan+Standard+Incorporated/@14.6447399,120.9885659,17z/data=!3m1!4b1!4m6!3m5!1s0x3397b16d4e980757:0xab2b3523d851808e!8m2!3d14.6447399!4d120.9885659!16s%2Fg%2F11xxm96fj?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="get-directions-btn">
+            <i class="fas fa-paper-plane"></i>
+            <span>Get in this location</span>
         </a>
-    
+    </div>
 </div>
+
+    <div class="info-details-padding">
+        <h2 class="dealer-subtitle">Location</h2>
+        
+        <div class="location-entry">
+            <h4 class="branch-name">Caloocan Standard Inc (Head Office)</h4>
+            <div class="contact-detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>110 6th St, Grace Park East, Caloocan, Metro Manila</p>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-mobile-alt"></i>
+                <p>0917-835-5884</p>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-phone"></i>
+                <p>8-363-83-70 to 72</p>
+            </div>
+        </div>
+
+        <div class="location-entry separator">
+            <h4 class="branch-name">Tyregetz Inc (Retail Partner)</h4>
+            <div class="contact-detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>109 Calamba St, Santa Mesa Heights, Quezon City</p>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-mobile-alt"></i>
+                <p>099-988-16400</p>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-phone"></i>
+                <p>(02) 8363 8081</p>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
 </section>
 <div class="contact-stack" id="contactStack">
     <div class="main-trigger" onclick="toggleModernContact()">
@@ -205,9 +187,14 @@
     </div>
 
     <div class="social-icons-wrapper">
-        <a href="viber://chat?number=+63998816400" class="btn-circle viber"><img src="picture/viber.png"></a>
+        <a href="viber://chat?number=+639998816400" class="btn-circle viber"><img src="picture/viber.png"></a>
         <a href="https://www.messenger.com/t/104591254588832" class="btn-circle messenger"><img src="picture/messenger.png"></a>
-        <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlFllzcchmgMBZBpmWvNtfcBNlLlXPNxZbtBQNnMCXNqZqXlFXzLDlFfxTnGzKMPRqmXJB" class="btn-circle email"><img src="picture/communication.png"></a>
+       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Sales@caloocanstandard.com" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="btn-circle email">
+        <img src="picture/communication.png" alt="Gmail">
+    </a>
        
     </div>
 </div>
@@ -288,7 +275,7 @@
         </div>
     </div>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
