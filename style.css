@@ -238,7 +238,7 @@ header {
 .static-content {
     position: absolute;
     inset: 0;
-    z-index: 10;
+    z-index: 10; /* Para laging nasa ibabaw ng slider */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -274,7 +274,56 @@ header {
     clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
 }
 
+/* --- MOBILE VIEW FOR HERO SECTION --- */
+@media (max-width: 768px) {
+    .main-hero-wrapper {
+        height: 80vh; /* Bawasan ang height sa mobile para makita ang content sa baba */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
+    .bg-slide {
+        background-position: center center; /* Siguradong nasa gitna ang focus ng picture */
+        background-size: cover;
+    }
+
+    .static-content {
+        padding: 0 20px;
+        text-align: center; /* I-center ang text sa mobile */
+        width: 100%;
+    }
+
+    .hero-text-area {
+        max-width: 100%;
+    }
+
+    .hero-text-area .sub-title {
+        font-size: 1rem; /* Mas maliit na sub-title */
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+    }
+
+    .hero-text-area h1 {
+        font-size: 2.2rem; /* Mas maliit na heading para hindi mag-overlap */
+        line-height: 1.2;
+        margin-bottom: 25px;
+    }
+
+    .btn-modern {
+        padding: 14px 30px;
+        font-size: 0.9rem;
+        display: inline-block; /* Siguradong nasa gitna ang button */
+        width: auto;
+    }
+}
+
+/* Fix para sa mga sobrang liliit na phone (iPhone SE) */
+@media (max-width: 480px) {
+    .hero-text-area h1 {
+        font-size: 1.8rem;
+    }
+}
 
 /* Bottom Info Strip */
 .info-strip {

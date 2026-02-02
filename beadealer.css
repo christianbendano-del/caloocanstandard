@@ -467,50 +467,107 @@ header {
 }
 
 /* --- MAP WRAPPER --- */
+/* --- MODERN MAP WRAPPER (FIXED BORDER) --- */
 .modern-map-wrapper {
     position: relative;
     width: 100%;
-    height: 280px;
+    height: 300px;
     overflow: hidden;
+    
+    /* PERMANENT FIXED BORDER */
+    border: 6px solid #a00; /* Naka-fix na Maroon simula pa lang */
+    border-radius: 20px;    /* Rounded corners para sa modernong look */
+    box-sizing: border-box;
+    
+    /* Shadow effect para magmukhang "Floating Card" */
+    box-shadow: 0 15px 40px rgba(160, 0, 0, 0.15);
+    background: #fff;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
 }
 
+/* --- IFRAME DESIGN --- */
 .modern-map-wrapper iframe {
     width: 100%;
     height: 100%;
-    transition: all 0.5s ease-in-out;
+    border: none;
+    display: block;
+    filter: contrast(1.1) brightness(0.9); /* Mas malinaw na contrast */
+    transition: transform 0.8s ease, filter 0.5s ease;
 }
 
+/* --- OVERLAY & BUTTON --- */
 .map-overlay {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(26, 26, 64, 0.35); /* Elegant dark-blue tint */
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transition: 0.4s ease;
+    opacity: 0; /* Hidden by default */
+    transition: all 0.4s ease;
 }
 
 .get-directions-btn {
-    background: #a00;
-    color: white;
-    text-decoration: none;
-    padding: 12px 25px;
+    background: #ffffff; /* White button para mag-pop sa maroon border */
+    color: #a00;         /* Maroon text */
+    padding: 14px 28px;
     border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.85rem;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    text-decoration: none;
     display: flex;
     align-items: center;
     gap: 10px;
-    transform: translateY(20px);
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(30px); /* Naka-angat para sa "Pop" effect */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.modern-map-wrapper:hover .map-overlay { opacity: 1; }
-.modern-map-wrapper:hover .get-directions-btn { transform: translateY(0); }
-.modern-map-wrapper:hover iframe { transform: scale(1.05); }
+/* --- THE MODERN HOVER EFFECTS --- */
+.modern-map-wrapper:hover {
+    transform: translateY(-8px); /* Card float up */
+    box-shadow: 0 25px 50px rgba(160, 0, 0, 0.25); /* Mas malakas na glow */
+}
+
+.modern-map-wrapper:hover iframe {
+    transform: scale(1.15); /* Smooth map zoom */
+    filter: contrast(1.1) brightness(1); /* Lumiwanag ang mapa */
+}
+
+.modern-map-wrapper:hover .map-overlay {
+    opacity: 1;
+}
+
+.modern-map-wrapper:hover .get-directions-btn {
+    transform: translateY(0); /* Bababa ang button sa gitna */
+}
+
+.get-directions-btn:hover {
+    background: #a00;
+    color: #fff;
+    transform: scale(1.05) !important;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .modern-map-wrapper {
+        height: 240px;
+        border-width: 4px; /* Bahagyang mas payat sa mobile */
+    }
+    
+    .map-overlay {
+        opacity: 1; /* Laging visible sa mobile dahil walang hover */
+        background: rgba(0, 0, 0, 0.2);
+    }
+    
+    .get-directions-btn {
+        transform: translateY(0);
+        padding: 10px 20px;
+    }
+}
 
 /* --- CONTACT DETAILS --- */
 .info-details-padding { padding: 35px; }
@@ -1601,7 +1658,7 @@ header {
     height: 600px; /* Taas ng banner */
     
     /* BACKGROUND IMAGE CODE */
-    background-image: url('picture/[CSI]\ MRL\ Cover\ Photo.jpeg'); /* <-- PALITAN MO ITO NG FILENAME NG PICTURE MO */
+    background-image: url('picture/[CSI]\ Home\ Cover\ Photo\ -\ Alliance.png'); /* <-- PALITAN MO ITO NG FILENAME NG PICTURE MO */
     background-size: cover;      /* Pinupuno ang buong space ng banner */
     background-position: center; /* Pinapagitna ang focus ng litrato */
     background-repeat: no-repeat;
