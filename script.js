@@ -255,3 +255,4 @@ async function handleSubmit(event) {
         btn.innerHTML = "<span>Submit Application</span> <i class='fas fa-paper-plane'></i>";
     });
 }
+

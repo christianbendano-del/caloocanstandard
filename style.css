@@ -382,85 +382,113 @@ header {
 }
 .divider { width: 1px; height: 15px; background: #ccc; }
 
-.services-section {
-    padding: 80px 10%;
-    background-color: #f8f9fa;
-    text-align: center;
+.tire-modern-clean {
+    position: relative !important;
+    padding: 100px 5% !important;
+    background: #ffffff !important;
+    min-height: 750px !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow: hidden !important;
 }
 
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 50px;
-    color: #0b1d44;
-    text-transform: uppercase;
+.tire-bg-white-layer {
+    position: absolute !important;
+    inset: 0 !important;
+    background-image: url('picture/sectionbg.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    opacity: 0.35 !important;
+    z-index: 1 !important;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+.tire-content-wrap {
+    position: relative !important;
+    z-index: 10 !important;
+    display: flex !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    gap: 40px !important;
+    align-items: center !important;
 }
 
-/* Card Styling */
-.service-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    text-decoration: none; /* Alisin ang underline ng link */
-    color: inherit;
-    display: block;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+/* Adjusted Typography Size */
+.tire-text-col { flex: 0 0 350px !important; }
+.tire-main-title {
+    font-family: 'Arial Black', sans-serif !important;
+    font-size: 3.2rem !important; /* Mula 3.8rem, binabaan natin ng onti */
+    line-height: 1.1 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 25px !important;
+    letter-spacing: -1px !important;
 }
 
-/* Image Zoom Effect */
-.service-image {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
+.tire-action-red {
+    background: #ff0000 !important;
+    color: #fff !important;
+    padding: 14px 35px !important;
+    text-decoration: none !important;
+    font-weight: 900 !important;
+    display: inline-block !important;
+    text-transform: uppercase !important;
+    font-size: 0.9rem !important;
 }
 
-.service-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+/* Card Styling (No Borders) */
+.tire-cards-col { flex: 1 !important; display: flex !important; gap: 15px !important; }
+
+.tire-card-no-border {
+    flex: 1 !important;
+    height: 480px !important; /* Bahagyang liit para bumagay sa font */
+    background: #000 !important;
+    transform: skewX(-7deg) !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+    transition: 0.4s ease !important;
 }
 
-.service-info {
-    padding: 25px;
-    text-align: left;
+.tire-card-no-border:hover {
+    transform: skewX(-7deg) translateY(-8px) !important;
 }
 
-.service-info h3 {
-    margin: 0;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #333;
+.tire-link-box { display: block !important; width: 100% !important; height: 100% !important; }
+
+.tire-img-clipper {
+    width: 160% !important; height: 100% !important;
+    margin-left: -30% !important;
+    transform: skewX(7deg) !important;
+    position: relative !important;
 }
 
-.learn-more {
-    display: inline-block;
-    margin-top: 15px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #171716; /* Goodyear Yellow */
-    transition: color 0.3s;
+.tire-img-clipper img {
+    width: 100% !important; height: 100% !important;
+    object-fit: cover !important;
+    transition: 0.6s ease !important;
 }
 
-/* HOVER EFFECTS */
-.service-card:hover {
-    transform: translateY(-15px); /* Card lifts up */
-    box-shadow: 0 20px 40px rgba(5, 4, 4, 0.868);
+.tire-card-no-border:hover img { transform: scale(1.1) !important; }
+
+.tire-card-label {
+    position: absolute !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    padding: 30px 15px !important;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8)) !important;
+    color: #fff !important;
+    font-family: 'Arial', sans-serif !important;
+    font-weight: 800 !important;
+    font-style: italic !important;
+    font-size: 1.3rem !important; /* Liit din ng onti para proportioned */
+    text-align: center !important;
 }
 
-.service-card:hover .service-image img {
-    transform: scale(1.1); /* Image zooms in slightly */
-}
-
-.service-card:hover .learn-more {
-    color: #cc110ef9; /* Yellow turns to Navy blue */
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .tire-content-wrap { flex-direction: column !important; text-align: center !important; }
+    .tire-cards-col { flex-direction: column !important; }
+    .tire-card-no-border { transform: skewX(0) !important; height: 350px !important; }
+    .tire-img-clipper { transform: skewX(0) !important; width: 100% !important; margin: 0 !important; }
 }
 
 /* --- FOOTER STYLES --- */
@@ -1163,40 +1191,4 @@ body {
         height: 1px;
         margin: 20px 0;
     }
-}
-/* --- SECTION GAP STYLE --- */
-.section-gap-gray {
-    width: 100%;
-    height: 40px; /* Sukat ng space sa pagitan */
-    background-color: #f4f4f4; /* Light Gray gap */
-    border-top: 1px solid #e0e0e0; /* Subtle line sa itaas */
-    border-bottom: 1px solid #e0e0e0; /* Subtle line sa ibaba */
-}
-
-/* --- QUICK LINKS ADJUSTMENT --- */
-.feature-cta-row {
-    padding: 80px 0; /* Binawasan ang padding dahil may gap na sa taas */
-    background-color: #ffffff;
-}
-
-.cta-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Middle Line Separator */
-.cta-middle-divider {
-    width: 1px;
-    height: 250px;
-    background: #dddddd;
-}
-
-/* Maroon Theme Icons */
-.cta-icon i {
-    font-size: 2.8rem;
-    color: #a00; 
-    margin-bottom: 20px;
 }
