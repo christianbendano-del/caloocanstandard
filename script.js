@@ -255,22 +255,4 @@ async function handleSubmit(event) {
         btn.innerHTML = "<span>Submit Application</span> <i class='fas fa-paper-plane'></i>";
     });
 }
-function revealOnScroll() {
-    var reveals = document.querySelectorAll(".cta-block");
 
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 150; // Distansya bago mag-trigger ang animation
-
-        if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add("reveal-active");
-        }
-    }
-}
-
-// Patakbuhin ang function tuwing mag-scroll
-window.addEventListener("scroll", revealOnScroll);
-
-// Patakbuhin din pagka-load ng page (kung sakaling nasa view na agad)
-revealOnScroll();

@@ -1075,118 +1075,120 @@ body {
 }
 
 .btn-circle img { width: 30px; height: 30px; }
-/* Container Layout */
+/* --- FEATURE CTA ROW STYLE --- */
 .feature-cta-row {
-    background: #fff;
-    padding: 80px 5%;
+    padding: 100px 0;
+    background-color: #ffffff;
+    width: 100%;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .cta-wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex; /* Pinapantay ang dalawang column */
-    align-items: stretch; /* Pinapantay ang taas ng magkabilang block */
-    gap: 0; 
-}
-
-/* Individual Blocks */
-.cta-block {
-    flex: 1; /* Pantay na lapad */
-    display: flex;
-    flex-direction: column; /* Content mula taas pababa */
-    padding: 20px 60px;
-    opacity: 0;
-    transform: translateY(50px); /* Nakababa ng 50px */
-    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth transition */
-}
-/* State kapag "active" na o na-scroll na */
-.cta-block.reveal-active {
-    opacity: 1;
-    transform: translateY(0); /* Babalik sa orihinal na pwesto */
-}
-
-/* Delay para sa pangalawang block para hindi sabay */
-.cta-block:nth-child(3) {
-    transition-delay: 0.2s;
-}
-
-/* Middle Divider Line */
-.cta-middle-divider {
-    width: 1px;
-    background: #e0e0e0; /* Subtle gray line */
-    margin: 40px 0;
-}
-
-/* Icon Styling */
-.cta-icon {
-    font-size: 2rem;
-    color: #c02a1b; /* Caloocan Red */
-    margin-bottom: 25px;
-}
-
-/* Typography */
-.cta-title {
-    font-family: 'Arial Black', sans-serif;
-    font-size: 2.5rem;
-    color: #000;
-    margin-bottom: 20px;
-    text-transform: capitalize;
-}
-
-.cta-text {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 40px;
-    flex-grow: 1; /* Eto ang sekreto para laging itulak ang button sa baba */
-}
-
-/* Ultra Modern Button */
-.ultra-modern-btn {
-    display: inline-flex;
-    text-decoration: none;
-    width: fit-content;
-    transition: 0.3s;
-}
-
-.btn-label {
-    background: #c02a1b; /* Red part */
-    color: #fff;
-    padding: 15px 30px;
-    font-weight: 900;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-}
-
-.btn-arrow-box {
-    background: #1a1a2e; /* Dark Blue/Black part */
-    color: #fff;
-    padding: 15px 18px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.ultra-modern-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+.cta-block {
+    flex: 1;
+    padding: 0 50px;
+    text-align: left; /* Sinunod ang alignment sa screenshot */
 }
 
-/* Mobile View Adjustment */
-@media (max-width: 992px) {
+/* Ang Vertical Line sa Gitna */
+.cta-middle-divider {
+    width: 1px;
+    height: 280px;
+    background: #dddddd;
+}
+
+.cta-icon i {
+    font-size: 2.8rem;
+    color: #a00; /* Maroon */
+    margin-bottom: 20px;
+}
+
+.cta-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cta-text {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    max-width: 420px;
+}
+
+/* --- THE ULTRA MODERN BUTTON (Maroon & Navy) --- */
+.ultra-modern-btn {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-label {
+    background: #a00; /* Maroon Base */
+    color: white;
+    padding: 14px 28px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    /* Slant Style mula sa reference */
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+    transition: 0.3s;
+}
+
+.btn-arrow-box {
+    background: #1a1a40; /* Dark Navy */
+    color: white;
+    padding: 14px 18px;
+    margin-left: -12px;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+/* Hover Effects */
+.ultra-modern-btn:hover {
+    transform: translateY(-3px);
+}
+
+.ultra-modern-btn:hover .btn-label {
+    background: #1a1a40; /* Nagpapalit kulay sa hover */
+}
+
+.ultra-modern-btn:hover .btn-arrow-box {
+    background: #a00;
+    padding-left: 25px;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 850px) {
     .cta-wrapper {
         flex-direction: column;
-    }
-    .cta-middle-divider {
-        width: 80%;
-        height: 1px;
-        margin: 40px auto;
-    }
-    .cta-block {
-        padding: 20px;
         text-align: center;
     }
-    .ultra-modern-btn {
-        margin: 0 auto;
+    .cta-block {
+        padding: 40px 20px;
+        text-align: center;
+    }
+    .cta-text {
+        margin: 0 auto 30px;
+    }
+    .cta-middle-divider {
+        width: 100px;
+        height: 1px;
+        margin: 20px 0;
     }
 }

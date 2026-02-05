@@ -75,7 +75,7 @@
     <div class="background-slider">
         <div class="bg-slide active" style="background-image: url('picture/[CSI]\ Home\ Cover\ Photo\ -\ Alliance.png');"></div>
         <div class="bg-slide" style="background-image: url('picture/[CSI] Home Cover Photo - Wonderland.png');"></div>
-        <div class="bg-slide" style="background-image: url('picture/[CSI]\ Home\ Cover\ Photo\ -\ MRL.png');"></div>
+     
     </div>
 
     <div class="static-content">
@@ -134,38 +134,139 @@
 </div>
 
 
+  <style>
+       /* =========================================
+   ULTRA-MODERN SMOOTH REVEAL
+   ========================================= */
 
+/* 1. KEYFRAMES: Ang "Spring" Motion Logic */
+@keyframes modernReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) scale(0.9); /* Magsisimula sa malalim at maliit */
+        filter: blur(10px); /* Soft entrance blur */
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.02); /* Bahagyang lalampas (overshoot) */
+        filter: blur(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1); /* Titigil sa tamang pwesto */
+    }
+}
 
+/* =========================================
+   MODERN ALIGNMENT & UPWARD TRANSITION
+   ========================================= */
+
+/* 1. CONTAINER: Para siguradong pantay ang dalawang column */
+.cta-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Gagawing magkapantay ang taas ng dalawang blocks */
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 2. CTA BLOCK: Initial state para sa paatas na transition */
+.cta-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Itutulak ang button sa pinakababa para pantay */
+    padding: 40px 60px;
+    opacity: 0;
+    transform: translateY(50px); /* Transition na paatas */
+    filter: blur(5px);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 3. MIDDLE DIVIDER: Pantay na guhit sa gitna */
+.cta-middle-divider {
+    width: 1px;
+    background-color: #ddd;
+    margin: 40px 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* 4. REVEAL STATE: Pag na-scroll na */
+.reveal-now .cta-block {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    filter: blur(0) !important;
+}
+
+.reveal-now .cta-middle-divider {
+    opacity: 1 !important;
+}
+
+/* Staggered Delay para sa paatas na transition */
+.reveal-now .cta-block:nth-child(1) { transition-delay: 0.1s; }
+.reveal-now .cta-block:nth-child(3) { transition-delay: 0.4s; }
+
+/* 5. BUTTON ALIGNMENT: Para siguradong laging nasa baba */
+.ultra-modern-btn {
+    margin-top: auto; /* Push button to the bottom */
+    align-self: flex-start; /* Allign to the left */
+}
+    </style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const ctaSection = document.querySelector('.feature-cta-row');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // I-o-on ang animation
+                entry.target.classList.add('reveal-now');
+                // Unobserve para hindi na mawala pag scroll pabalik
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { 
+        threshold: 0.25 // Trigger pag 25% na ng cards ang kita sa screen
+    });
+
+    if (ctaSection) {
+        observer.observe(ctaSection);
+    }
+});
+</script>
 
 
   <section class="feature-cta-row">
-    <div class="cta-wrapper">
-        
-        <div class="cta-block">
-            <div class="cta-icon"><i class="fas fa-info-circle"></i></div>
-            <h2 class="cta-title">Who We Are</h2>
-            <p class="cta-text">At Caloocan Standard Inc., quality isn't an exception—it’s the baseline.For over 60 years, we have been a trusted partner for your automotive needs—carefully our products to your needs. We are your partner in driving a stronger, more efficient future—the Caloocan way.</p>
-            <a href="about.html" class="ultra-modern-btn">
-                <span class="btn-label">CLICK HERE</span>
-                <span class="btn-arrow-box"><i class="fas fa-chevron-right"></i></span>
-            </a>
+        <div class="cta-wrapper">
+            
+            <div class="cta-block">
+                <div class="cta-icon"><i class="fas fa-info-circle"></i></div>
+                <h2 class="cta-title">Who We Are</h2>
+                <p class="cta-text">At Caloocan Standard Inc., quality isn’t an exception—it’s the baseline. For over 60 years, we’ve been a trusted automotive partner, driving a stronger, more efficient future—the Caloocan way.</p>
+                <a href="about.html" target="_blank" class="ultra-modern-btn">
+                    <span class="btn-label">CLICK HERE</span>
+                    <span class="btn-arrow-box"><i class="fas fa-chevron-right"></i></span>
+                </a>
+            </div>
+
+            <div class="cta-middle-divider"></div>
+
+            <div class="cta-block">
+                <div class="cta-icon"><i class="fas fa-warehouse"></i></div>
+                <h2 class="cta-title">Be a Dealer</h2>
+                <p class="cta-text">More than products—we offer partnership. Join Caloocan Standard Inc. and bring your customers quality, choice, and service they can rely on.</p>
+                <a href="beadealer.html" target="_blank" class="ultra-modern-btn">
+                    <span class="btn-label">CLICK HERE</span>
+                    <span class="btn-arrow-box"><i class="fas fa-chevron-right"></i></span>
+                </a>
+            </div>
+
         </div>
+    </section>
 
-        <div class="cta-middle-divider"></div>
 
-        <div class="cta-block">
-         <div class="cta-icon"><i class="fas fa-warehouse"></i></div>
-            <h2 class="cta-title">Be a Delear</h2>
-            <p class="cta-text">More than products—we offer partnership.  Join Caloocan Standard Inc. and bring your customers quality, choice, and service they can rely on
-</p>
-            <a href="beadealer.html" class="ultra-modern-btn">
-                <span class="btn-label">CLICK HERE</span>
-                <span class="btn-arrow-box"><i class="fas fa-chevron-right"></i></span>
-            </a>
-        </div>
-
-    </div>
-</section>  
 
   <section class="tire-modern-clean">
     <div class="tire-bg-white-layer"></div>
@@ -204,6 +305,108 @@
         </div>
     </div>
 </section>
+<style>
+/* =========================================
+   PITSTOP RACING (Scroll-Triggered)
+   ========================================= */
+
+.tire-modern-clean {
+    overflow: hidden;
+}
+
+/* --- 1. KEYFRAMES: Modern Harurot (Slide + Blur) --- */
+@keyframes imageHarurot {
+    0% {
+        transform: translateX(100px) scale(1.3); /* Galing sa kanan */
+        filter: blur(15px) brightness(1.5);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        filter: blur(0) brightness(1);
+        opacity: 1;
+    }
+}
+
+@keyframes textModernSlide {
+    0% {
+        transform: translateX(-50px); /* Usog pabalik para sa title */
+        opacity: 0;
+        filter: blur(5px);
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* --- 2. THE ELEMENTS (Hidden by Default) --- */
+.tire-text-col,
+.tire-img-clipper img {
+    opacity: 0;
+    will-change: transform, filter, opacity;
+}
+
+/* --- 3. THE TRIGGER CLASS (Added by JS) --- */
+.reveal-now .tire-text-col {
+    animation: textModernSlide 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.reveal-now .tire-card-no-border img {
+    animation: imageHarurot 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* --- 4. THE SEQUENCE: CAR TALKS FIRST (#3) --- */
+/* Dahil reverse ang gusto mo, uunahin natin ang pangatlo */
+
+.reveal-now .tire-card-no-border:nth-child(3) img { 
+    animation-delay: 0.1s; /* Car Talks Leads */
+}
+
+.reveal-now .tire-card-no-border:nth-child(2) img { 
+    animation-delay: 0.4s; /* Car Care Tips */
+}
+
+.reveal-now .tire-card-no-border:nth-child(1) img { 
+    animation-delay: 0.7s; /* News and Event */
+}
+
+.reveal-now .tire-text-col { 
+    animation-delay: 0.2s; /* Pitstop Title kasunod ng Car Talks */
+}
+
+/* --- 5. CLIPPER SETUP --- */
+.tire-img-clipper {
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%); /* Maintain ang slant */
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Kinikilala ang buong section container
+    const section = document.querySelector('.tire-modern-clean');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Pag nakita na ang section, sabay-sabay ittrigger ang sequence
+                entry.target.classList.add('reveal-now');
+                // Optional: stop observing after reveal
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { 
+        threshold: 0.2 // Mag-start pag 20% na ng section ang kita sa screen
+    });
+
+    if(section) observer.observe(section);
+});
+</script>
+
 <div class="contact-stack" id="contactStack">
     <div class="main-trigger" onclick="toggleModernContact()">
         <div class="tooltip" id="helpTooltip">Hello! How can we help you?</div>
