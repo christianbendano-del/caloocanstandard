@@ -384,7 +384,7 @@ header {
 
 .tire-modern-clean {
     position: relative !important;
-    padding: 100px 5% !important;
+    padding: 10px 5% !important;
     background: #ffffff !important;
     min-height: 750px !important;
     display: flex !important;
@@ -414,20 +414,31 @@ header {
 }
 
 /* Adjusted Typography Size */
-.tire-text-col { flex: 0 0 350px !important; }
+.tire-text-col { flex: 0 0 350px !important;}
+
+.tire-text-col  {
+
+text-align: center;
+  font-family: 'Arial Black', sans-serif; /* Pwedeng palitan depende sa trip mong font */
+  padding: 20px;
+}
 .tire-main-title {
     font-family: 'Arial Black', sans-serif !important;
-    font-size: 3.2rem !important; /* Mula 3.8rem, binabaan natin ng onti */
+   
     line-height: 1.1 !important;
     color: #1a1a1a !important;
-    margin-bottom: 25px !important;
     letter-spacing: -1px !important;
+   font-size: 64px; /* Malaki at bold */
+    margin-bottom: 1; /* Para dikit ang tagline sa taas */
+    text-transform: uppercase;
+     letter-spacing: 2px;
+     color: #333;
 }
 
 .tire-action-red {
     background: #ff0000 !important;
     color: #fff !important;
-    padding: 14px 35px !important;
+    padding: 15px 20px !important;
     text-decoration: none !important;
     font-weight: 900 !important;
     display: inline-block !important;
@@ -936,8 +947,8 @@ body {
     /* Eto ang magtutulak sa font sa itaas at image sa ibaba */
     justify-content: space-between; 
     align-items: center;
-    height: 250px;      /* Fixed height para pantay ang taas ng font at images */
-    padding: 10px 0 0 0; /* Minimal top padding para dikit ang font sa taas */
+    height: 200px;      /* Fixed height para pantay ang taas ng font at images */
+    padding: 20px 0 0 0; /* Minimal top padding para dikit ang font sa taas */
     text-decoration: none;
     transition: 0.3s ease;
     border-left: 1px solid rgba(255, 255, 255, 0.15);
@@ -1138,7 +1149,7 @@ body {
 .btn-label {
     background: #a00; /* Maroon Base */
     color: white;
-    padding: 14px 28px;
+    padding: 13px 19px;
     font-weight: 700;
     font-size: 0.85rem;
     letter-spacing: 1px;

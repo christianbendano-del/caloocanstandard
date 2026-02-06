@@ -273,7 +273,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     <div class="tire-content-wrap">
         <div class="tire-text-col">
-            <h1 class="tire-main-title">PITSTOP <br> Drive Smarter, <br> Stay Ahead</h1>
+            <h1 class="tire-main-title">PITSTOP </h1>
+             <p class="tagline">Drive smarter, stay ahead</p>
             <a href="#" class="tire-action-red">SEE ALL ARTICLES</a>
         </div>
 
@@ -347,7 +348,14 @@ document.addEventListener("DOMContentLoaded", function() {
     opacity: 0;
     will-change: transform, filter, opacity;
 }
+.tagline {
+  font-size: 30px; /* Maliit na size */
+  font-weight: normal;
+  color: #666; /* Medyo gray para hindi agaw-pansin sa header */
+  margin-top: 5px; /* Konting space mula sa PITSTOP */
+  letter-spacing: 1px;
 
+}
 /* --- 3. THE TRIGGER CLASS (Added by JS) --- */
 .reveal-now .tire-text-col {
     animation: textModernSlide 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
@@ -357,8 +365,7 @@ document.addEventListener("DOMContentLoaded", function() {
     animation: imageHarurot 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
 }
 
-/* --- 4. THE SEQUENCE: CAR TALKS FIRST (#3) --- */
-/* Dahil reverse ang gusto mo, uunahin natin ang pangatlo */
+
 
 .reveal-now .tire-card-no-border:nth-child(3) img { 
     animation-delay: 0.1s; /* Car Talks Leads */
