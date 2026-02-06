@@ -418,9 +418,12 @@ header {
 
 .tire-text-col  {
 
-text-align: center;
+text-align: left;
   font-family: 'Arial Black', sans-serif; /* Pwedeng palitan depende sa trip mong font */
-  padding: 20px;
+  padding: 50px;
+padding-left: 0%;
+margin-left: -09% !important;
+
 }
 .tire-main-title {
     font-family: 'Arial Black', sans-serif !important;
