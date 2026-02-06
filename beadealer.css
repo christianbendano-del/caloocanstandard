@@ -40,7 +40,7 @@ body {
 
 .top-bar-container {
     /* Palitan ang percentage na ito depende sa padding ng iyong Logo/Menu */
-    padding: 0 5%; 
+    padding: 0 8%; 
     display: flex;
     justify-content: space-between; 
     align-items: center;

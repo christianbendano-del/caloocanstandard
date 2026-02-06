@@ -40,7 +40,7 @@ body {
 
 .top-bar-container {
     /* Palitan ang percentage na ito depende sa padding ng iyong Logo/Menu */
-    padding: 0 5%; 
+    padding: 0 8%; 
     display: flex;
     justify-content: space-between; 
     align-items: center;
@@ -480,143 +480,91 @@ header {
     border-top: 3px solid #a00; /* Maroon Top Border */
 }
 
+/* --- FOOTER MAIN --- */
+.modern-footer {
+    background: #000000; /* Pure Black */
+    color: #ffffff;
+    padding: 80px 0 0;
+    font-family: 'Poppins', sans-serif;
+    border-top: 2px solid #a00;
+}
+
 .footer-container {
-    max-width: 1200px;
+    max-width: 1500px; /* Pantay sa red lines mo */
     margin: 0 auto;
+    padding: 0 40px 60px;
+    
+    /* ETO ANG SIKRETO SA PANTAY NA GAP */
     display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    padding: 0 20px 60px;
+    justify-content: space-between; /* Itutulak sila sa dulo ng bawat isa nang pantay ang gap */
+    align-items: flex-start;
 }
 
 .footer-col {
-    flex: 1;
+    /* Ang bawat column ay kukuha lang ng espasyo na kailangan nila */
+    flex: 0 1 auto; 
 }
 
-/* Brand & Google Rating */
-.brand-info {
-    flex: 1.2; /* Binigyan ng konting extra space ang logo column */
+/* Limitahan ang lapad ng logo column para hindi itulak masyado yung Company */
+.brand-col {
+    max-width: 300px;
 }
 
-.footer-logo { 
-    width: 200px; /* Laking sapat para mabasa ang text sa logo */
-    height: auto;
-    margin-bottom: 25px; 
-    filter: brightness(1.1); /* Konting linaw para sa black background */
-    transition: transform 0.3s ease;
+/* --- PRODUCT GRID FIX --- */
+.product-grid {
+    display: flex;
+    gap: 90px; /* Space sa pagitan ng 3 columns ng brands */
 }
+.product-grid ul { list-style: none; padding: 0; margin: 0; }
+.product-grid ul li { margin-bottom: 8px; }
+.product-grid ul li a { color: #bbb; font-size: 0.85rem; }
 
-.footer-logo:hover {
-    transform: scale(1.05); /* Subtle zoom effect */
-}
-
-.company-desc { 
-    font-size: 0.9rem; 
-    color: #999; 
-    line-height: 1.6; 
-    margin-bottom: 25px;
-    max-width: 280px; /* Para hindi masyadong mahaba ang line of text */
-}
-.google-rating {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 12px 18px;
-    border-radius: 10px;
+/* --- GOOGLE RATING BOX --- */
+.google-rating-box {
+    background: #111111;
+    padding: 10px 15px;
+    border-radius: 6px;
     display: inline-block;
+    margin-top: 20px;
 }
-.rating-label { display: block; font-size: 0.7rem; color: #777; margin-bottom: 5px; text-transform: uppercase; }
-.stars i { color: #fbbc04; font-size: 0.85rem; margin-right: 2px; }
-.score { font-weight: 700; margin-left: 5px; color: #fff; }
+.rating-title { font-size: 0.6rem; color: #666; margin-bottom: 4px; }
+.rating-content { display: flex; align-items: center; gap: 10px; }
+.stars { color: #fbbc04; font-size: 0.85rem; }
+.score-num { color: #fff; font-weight: bold; font-size: 1rem; }
 
-/* Links & Headers */
-.footer-col h4 {
-    color: #fff;
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    font-weight: 600;
-    position: relative;
-}
-
+/* --- HEADERS & LINKS --- */
+.footer-logo { width: 250px; margin-bottom: 25px; }
+.company-desc { font-size: 0.85rem; color: #bbb; line-height: 1.6; }
+.footer-col h4 { font-size: 1.1rem; margin-bottom: 30px; color: #fff; }
 .footer-links { list-style: none; padding: 0; }
 .footer-links li { margin-bottom: 12px; }
-.footer-links li a {
-    color: #aaa;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: 0.3s ease;
-}
-.footer-links li a:hover { color: #a00; transform: translateX(5px); display: inline-block; }
+.footer-links li a { color: #bbb; text-decoration: none; font-size: 0.85rem; }
 
-/* Product 2-Column Grid */
-.product-grid { display: flex; gap: 30px; }
-
-/* Contact Us & Icons Only */
-.contact-info { list-style: none; padding: 0; margin-bottom: 20px; color: #aaa; font-size: 0.9rem; }
+/* --- CONTACT --- */
+.contact-info { list-style: none; padding: 0; color: #bbb; font-size: 0.85rem; }
 .contact-info li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-.follow-text { margin-top: 25px; font-weight: 600; color: #fff; }
-
+.follow-text { margin-top: 25px; font-weight: 600; margin-bottom: 15px; }
 .social-icons-only { display: flex; gap: 12px; }
 .social-icons-only a {
-    width: 38px; height: 38px;
-    background: #1a1a1a;
-    display: flex; align-items: center; justify-content: center;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 0.9rem;
-    transition: 0.3s;
-    text-decoration: none;
+    width: 50px; height: 50px; background: #1a1a1a;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: #fff; text-decoration: none;
 }
-.social-icons-only a:hover { background: #a00; transform: translateY(-3px); }
 
-/* --- FOOTER BOTTOM (CENTERED) --- */
+/* --- BOTTOM --- */
 .footer-bottom {
-    background: #050505; /* Black background para sa bottom bar */
+    background: #000;
     padding: 25px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Manipis na line sa itaas */
-    width: 100%;
+    text-align: center;
+    border-top: 1px solid #111;
 }
-
-.footer-bottom p {
-    font-size: 0.85rem;
-    color: #666; /* Grayish text para hindi masyadong agaw-pansin */
-    text-align: center; /* Dito natin ni-center ang text */
-    margin: 0;
-    letter-spacing: 0.5px;
-    text-transform: capitalize; /* Para maging malinis ang "Copy Wright" */
+.footer-bottom p { font-size: 0.75rem; color: #444; margin: 0; }
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
-
-/* Mobile View Adjustment */
-@media (max-width: 768px) {
-    .footer-bottom {
-        padding: 20px 15px;
-    }
-    .footer-bottom p {
-        font-size: 0.8rem;
-    }
-}
-
-
-
-/* --- MOBILE VIEW --- */
-@media (max-width: 992px) {
-    .footer-container { flex-wrap: wrap; }
-    .footer-col { min-width: 40%; }
-    .footer-logo {
-        width: 180px; /* Bahagyang liit sa mobile pero malaki pa rin kumpara sa dati */
-        margin: 0 auto 20px;
-        display: block;
-    }
-
-}
-
-@media (max-width: 768px) {
-    .footer-container { flex-direction: column; text-align: center; gap: 50px; }
-    .product-grid { justify-content: center; text-align: left; }
-    .contact-info li { justify-content: center; }
-    .social-icons-only { justify-content: center; }
-    
-    .google-rating { margin: 0 auto; }
-}
-
 /* Mobile Menu Toggle */
 .menu-toggle {
     display: none;
