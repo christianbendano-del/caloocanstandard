@@ -1093,7 +1093,7 @@ body {
 .btn-circle img { width: 30px; height: 30px; }
 /* --- FEATURE CTA ROW STYLE --- */
 .feature-cta-row {
-    padding: 100px 0;
+    padding: 50px 0;
     background-color: #ffffff;
     width: 100%;
     border-top: 1px solid #f0f0f0;
