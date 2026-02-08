@@ -590,15 +590,6 @@ header {
     color: #cc110ef9; /* Yellow turns to Navy blue */
 }
 
-/* --- FOOTER STYLES --- */
-.modern-footer {
-    background: #0a0a0a; /* Darker Black */
-    color: #ffffff;
-    padding: 80px 0 0;
-    font-family: 'Poppins', sans-serif;
-    border-top: 3px solid #a00; /* Maroon Top Border */
-}
-
 /* --- FOOTER MAIN --- */
 .modern-footer {
     background: #000000; /* Pure Black */
@@ -609,22 +600,19 @@ header {
 }
 
 .footer-container {
-    max-width: 1500px; /* Pantay sa red lines mo */
+ max-width: 1550px;
     margin: 0 auto;
     padding: 0 40px 60px;
-    
-    /* ETO ANG SIKRETO SA PANTAY NA GAP */
     display: flex;
-    justify-content: space-between; /* Itutulak sila sa dulo ng bawat isa nang pantay ang gap */
+    justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .footer-col {
-    /* Ang bawat column ay kukuha lang ng espasyo na kailangan nila */
     flex: 0 1 auto; 
 }
 
-/* Limitahan ang lapad ng logo column para hindi itulak masyado yung Company */
 .brand-col {
     max-width: 300px;
 }
@@ -632,11 +620,34 @@ header {
 /* --- PRODUCT GRID FIX --- */
 .product-grid {
     display: flex;
-    gap: 90px; /* Space sa pagitan ng 3 columns ng brands */
+    gap: 100px; /* Space sa pagitan ng Tires, Batteries, at Others */
 }
+
+.category-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #e10600; /* Red color para sa Tires, Batteries, Others header */
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    display: block;
+}
+
 .product-grid ul { list-style: none; padding: 0; margin: 0; }
 .product-grid ul li { margin-bottom: 8px; }
-.product-grid ul li a { color: #bbb; font-size: 0.85rem; }
+
+.product-grid ul li a, 
+.footer-links li a { 
+    color: #bbb; 
+    font-size: 0.85rem; 
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.product-grid ul li a:hover, 
+.footer-links li a:hover { 
+    color: #e10600; /* Red hover effect */
+    padding-left: 5px;
+}
 
 /* --- GOOGLE RATING BOX --- */
 .google-rating-box {
@@ -645,6 +656,7 @@ header {
     border-radius: 6px;
     display: inline-block;
     margin-top: 20px;
+    border: 1px solid #222;
 }
 .rating-title { font-size: 0.6rem; color: #666; margin-bottom: 4px; }
 .rating-content { display: flex; align-items: center; gap: 10px; }
@@ -654,20 +666,26 @@ header {
 /* --- HEADERS & LINKS --- */
 .footer-logo { width: 250px; margin-bottom: 25px; }
 .company-desc { font-size: 0.85rem; color: #bbb; line-height: 1.6; }
-.footer-col h4 { font-size: 1.1rem; margin-bottom: 30px; color: #fff; }
-.footer-links { list-style: none; padding: 0; }
-.footer-links li { margin-bottom: 12px; }
-.footer-links li a { color: #bbb; text-decoration: none; font-size: 0.85rem; }
+.footer-col h4 { font-size: 1.1rem; margin-bottom: 30px; color: #fff; text-transform: uppercase; }
 
-/* --- CONTACT --- */
+/* --- CONTACT & SOCIALS --- */
 .contact-info { list-style: none; padding: 0; color: #bbb; font-size: 0.85rem; }
 .contact-info li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-.follow-text { margin-top: 25px; font-weight: 600; margin-bottom: 15px; }
+.contact-info i { color: #e10600; }
+
+.follow-text { margin-top: 25px; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; }
 .social-icons-only { display: flex; gap: 12px; }
+
 .social-icons-only a {
-    width: 50px; height: 50px; background: #1a1a1a;
+    width: 45px; height: 45px; background: #1a1a1a;
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
     color: #fff; text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons-only a:hover {
+    background: #e10600;
+    transform: translateY(-5px);
 }
 
 /* --- BOTTOM --- */
@@ -678,6 +696,14 @@ header {
     border-top: 1px solid #111;
 }
 .footer-bottom p { font-size: 0.75rem; color: #444; margin: 0; }
+
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 768px) {
+    .footer-container { flex-direction: column; gap: 40px; }
+    .product-grid { flex-direction: column; gap: 20px; }
+}
+
+
 /* Mobile Menu Toggle */
 .menu-toggle {
     display: none;

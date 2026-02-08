@@ -317,6 +317,18 @@ header {
     font-weight: 700;
     clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
 }
+.btn-modern:hover {
+    background-color:  rgb(26, 4, 85); /* Mas maliwanag na pula sa hover */
+    transform: scale(1.05); /* Bahagyang lalaki ang button */
+    box-shadow: 0 0 20px rgba(160, 0, 0, 0.6); /* Red glow effect */
+    
+    letter-spacing: 1px; /* Bahagyang maghihiwalay ang mga letra */
+}
+
+/* Effect kapag pinindot (click) */
+.btn-modern:active {
+    transform: scale(0.95); /* Lulubog nang kaunti */
+}
 
 /* --- MOBILE VIEW FOR HERO SECTION --- */
 @media (max-width: 768px) {
@@ -438,18 +450,34 @@ margin-left: -15% !important;
      color: #333;
 }
 
+/* Base style para sa button base sa iyong image */
 .tire-action-red {
-    background: #800000 !important;
-    color: #fff !important;
-    padding: 15px 20px !important;
-    text-decoration: none !important;
-    font-weight: 900 !important;
-    display: inline-block !important;
-    text-transform: uppercase !important;
-    font-size: 0.9rem !important;
-margin-top: 20px; /* Dagdagan ang value para mas bumaba pa */
-
+    display: inline-block;
+    background-color: #a00; /* Dark red base */
+    color: #ffffff;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: 900;
+    font-family: 'Arial Black', sans-serif;
+    letter-spacing: 1px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Smooth spring effect */
+    border: 2px solid transparent;
 }
+
+/* --- MODERN HOVER EFFECT --- */
+.tire-action-red:hover {
+    background-color:  rgb(26, 4, 85); /* Mas maliwanag na pula sa hover */
+    transform: scale(1.05); /* Bahagyang lalaki ang button */
+    box-shadow: 0 0 20px rgba(160, 0, 0, 0.6); /* Red glow effect */
+    
+    letter-spacing: 1px; /* Bahagyang maghihiwalay ang mga letra */
+}
+
+/* Effect kapag pinindot (click) */
+.tire-action-red:active {
+    transform: scale(0.95); /* Lulubog nang kaunti */
+}
+
 
 /* Card Styling (No Borders) */
 .tire-cards-col { flex: 1 !important; display: flex !important; gap: 15px !important; }
@@ -519,22 +547,19 @@ margin-top: 20px; /* Dagdagan ang value para mas bumaba pa */
 }
 
 .footer-container {
-    max-width: 1500px; /* Pantay sa red lines mo */
+    max-width: 1550px;
     margin: 0 auto;
     padding: 0 40px 60px;
-    
-    /* ETO ANG SIKRETO SA PANTAY NA GAP */
     display: flex;
-    justify-content: space-between; /* Itutulak sila sa dulo ng bawat isa nang pantay ang gap */
+    justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .footer-col {
-    /* Ang bawat column ay kukuha lang ng espasyo na kailangan nila */
     flex: 0 1 auto; 
 }
 
-/* Limitahan ang lapad ng logo column para hindi itulak masyado yung Company */
 .brand-col {
     max-width: 300px;
 }
@@ -542,11 +567,34 @@ margin-top: 20px; /* Dagdagan ang value para mas bumaba pa */
 /* --- PRODUCT GRID FIX --- */
 .product-grid {
     display: flex;
-    gap: 90px; /* Space sa pagitan ng 3 columns ng brands */
+    gap: 100px; /* Space sa pagitan ng Tires, Batteries, at Others */
 }
+
+.category-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #e10600; /* Red color para sa Tires, Batteries, Others header */
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    display: block;
+}
+
 .product-grid ul { list-style: none; padding: 0; margin: 0; }
 .product-grid ul li { margin-bottom: 8px; }
-.product-grid ul li a { color: #bbb; font-size: 0.85rem; }
+
+.product-grid ul li a, 
+.footer-links li a { 
+    color: #bbb; 
+    font-size: 0.85rem; 
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.product-grid ul li a:hover, 
+.footer-links li a:hover { 
+    color: #e10600; /* Red hover effect */
+    padding-left: 5px;
+}
 
 /* --- GOOGLE RATING BOX --- */
 .google-rating-box {
@@ -555,6 +603,7 @@ margin-top: 20px; /* Dagdagan ang value para mas bumaba pa */
     border-radius: 6px;
     display: inline-block;
     margin-top: 20px;
+    border: 1px solid #222;
 }
 .rating-title { font-size: 0.6rem; color: #666; margin-bottom: 4px; }
 .rating-content { display: flex; align-items: center; gap: 10px; }
@@ -564,20 +613,26 @@ margin-top: 20px; /* Dagdagan ang value para mas bumaba pa */
 /* --- HEADERS & LINKS --- */
 .footer-logo { width: 250px; margin-bottom: 25px; }
 .company-desc { font-size: 0.85rem; color: #bbb; line-height: 1.6; }
-.footer-col h4 { font-size: 1.1rem; margin-bottom: 30px; color: #fff; }
-.footer-links { list-style: none; padding: 0; }
-.footer-links li { margin-bottom: 12px; }
-.footer-links li a { color: #bbb; text-decoration: none; font-size: 0.85rem; }
+.footer-col h4 { font-size: 1.1rem; margin-bottom: 30px; color: #fff; text-transform: uppercase; }
 
-/* --- CONTACT --- */
+/* --- CONTACT & SOCIALS --- */
 .contact-info { list-style: none; padding: 0; color: #bbb; font-size: 0.85rem; }
 .contact-info li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-.follow-text { margin-top: 25px; font-weight: 600; margin-bottom: 15px; }
+.contact-info i { color: #e10600; }
+
+.follow-text { margin-top: 25px; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; }
 .social-icons-only { display: flex; gap: 12px; }
+
 .social-icons-only a {
-    width: 50px; height: 50px; background: #1a1a1a;
+    width: 45px; height: 45px; background: #1a1a1a;
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
     color: #fff; text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons-only a:hover {
+    background: #e10600;
+    transform: translateY(-5px);
 }
 
 /* --- BOTTOM --- */
@@ -588,6 +643,14 @@ margin-top: 20px; /* Dagdagan ang value para mas bumaba pa */
     border-top: 1px solid #111;
 }
 .footer-bottom p { font-size: 0.75rem; color: #444; margin: 0; }
+
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 768px) {
+    .footer-container { flex-direction: column; gap: 40px; }
+    .product-grid { flex-direction: column; gap: 20px; }
+}
+
+
 /* Mobile Menu Toggle */
 .menu-toggle {
     display: none;

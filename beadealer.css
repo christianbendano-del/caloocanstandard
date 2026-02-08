@@ -298,146 +298,6 @@ header {
 }
 
 
-.site-footer {
-     background-size: cover; 
-    width: 100%;
-    background-color: #1a1a1a; /* Dark background */
-    color: #ffffff;
-    font-family: 'Arial', sans-serif;
-    display: block;
-    position: relative; /* Importante para gumana ang z-index */
-    z-index: 9999;      /* Pinakamataas para takpan ang timeline line */
-    margin-top: -1px;   /* "Sub-pixel fix" para walang kahit anong puting guhit */
-}
-
-/* 1. Contact Bar (Top Bar) */
-.footer-contact-bar {
-    width: 100%;
-    background-color: #1a1a1a;
-    border-bottom: 1px solid #333;
-    padding: 30px 0;
-}
-
-.footer-grid-top {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.contact-item i {
-    font-size: 24px;
-    color: #cccccc;
-}
-
-.contact-item h4 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.contact-item p {
-    margin: 5px 0 0;
-    font-size: 14px;
-    color: #aaaaaa;
-}
-
-/* 2. Main Footer Content */
-.footer-main {
-    padding: 60px 0;
-}
-
-.footer-grid-main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    align-items: start;
-}
-
-.footer-title {
-    font-size: 18px;
-    margin-bottom: 25px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.footer-logo {
-    max-width: 200px;
-    margin-bottom: 20px;
-}
-
-.footer-col p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #aaaaaa;
-}
-
-/* Lists and Links */
-.footer-services, .footer-links {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-services li, .footer-links li {
-    margin-bottom: 12px;
-    font-size: 14px;
-    color: #aaaaaa;
-}
-
-.footer-links a {
-    color: #aaaaaa;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer-links a:hover {
-    color: #ffffff;
-    padding-left: 5px;
-}
-
-/* Social Icons & Tire Image */
-.social-icons {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.social-icons a {
-    color: #ffffff;
-    font-size: 20px;
-}
-
-.footer-tires-img {
-    max-width: 150px;
-    height: auto;
-}
-
-/* 3. Copyright Section */
-.footer-copyright {
-    background-color: #000000;
-    padding: 20px 0;
-    border-top: 1px solid #222;
-}
-
-.footer-copyright p {
-    margin: 0;
-    font-size: 13px;
-    color: #666666;
-}
-/* --- GLOBAL SECTION --- */
-.dealer-section {
-    background: #f8f9fa;
-    padding: 80px 0;
-    font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
-    overflow: hidden;
-}
-
 .dealer-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -1374,151 +1234,7 @@ header {
     color: #cc110ef9; /* Yellow turns to Navy blue */
 }
 
-/* --- FOOTER STYLES --- */
-.modern-footer {
-    background: #0a0a0a; /* Darker Black */
-    color: #ffffff;
-    padding: 80px 0 0;
-    font-family: 'Poppins', sans-serif;
-    border-top: 3px solid #a00; /* Maroon Top Border */
-}
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    padding: 0 20px 60px;
-}
-
-.footer-col {
-    flex: 1;
-}
-
-/* Brand & Google Rating */
-.brand-info {
-    flex: 1.2; /* Binigyan ng konting extra space ang logo column */
-}
-
-.footer-logo { 
-    width: 200px; /* Laking sapat para mabasa ang text sa logo */
-    height: auto;
-    margin-bottom: 25px; 
-    filter: brightness(1.1); /* Konting linaw para sa black background */
-    transition: transform 0.3s ease;
-}
-
-.footer-logo:hover {
-    transform: scale(1.05); /* Subtle zoom effect */
-}
-
-.company-desc { 
-    font-size: 0.9rem; 
-    color: #999; 
-    line-height: 1.6; 
-    margin-bottom: 25px;
-    max-width: 280px; /* Para hindi masyadong mahaba ang line of text */
-}
-.google-rating {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 12px 18px;
-    border-radius: 10px;
-    display: inline-block;
-}
-.rating-label { display: block; font-size: 0.7rem; color: #777; margin-bottom: 5px; text-transform: uppercase; }
-.stars i { color: #fbbc04; font-size: 0.85rem; margin-right: 2px; }
-.score { font-weight: 700; margin-left: 5px; color: #fff; }
-
-/* Links & Headers */
-.footer-col h4 {
-    color: #fff;
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    font-weight: 600;
-    position: relative;
-}
-
-.footer-links { list-style: none; padding: 0; }
-.footer-links li { margin-bottom: 12px; }
-.footer-links li a {
-    color: #aaa;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: 0.3s ease;
-}
-.footer-links li a:hover { color: #a00; transform: translateX(5px); display: inline-block; }
-
-/* Product 2-Column Grid */
-.product-grid { display: flex; gap: 30px; }
-
-/* Contact Us & Icons Only */
-.contact-info { list-style: none; padding: 0; margin-bottom: 20px; color: #aaa; font-size: 0.9rem; }
-.contact-info li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-.follow-text { margin-top: 25px; font-weight: 600; color: #fff; }
-
-.social-icons-only { display: flex; gap: 12px; }
-.social-icons-only a {
-    width: 38px; height: 38px;
-    background: #1a1a1a;
-    display: flex; align-items: center; justify-content: center;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 0.9rem;
-    transition: 0.3s;
-    text-decoration: none;
-}
-.social-icons-only a:hover { background: #a00; transform: translateY(-3px); }
-
-/* --- FOOTER BOTTOM (CENTERED) --- */
-.footer-bottom {
-    background: #050505; /* Black background para sa bottom bar */
-    padding: 25px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Manipis na line sa itaas */
-    width: 100%;
-}
-
-.footer-bottom p {
-    font-size: 0.85rem;
-    color: #666; /* Grayish text para hindi masyadong agaw-pansin */
-    text-align: center; /* Dito natin ni-center ang text */
-    margin: 0;
-    letter-spacing: 0.5px;
-    text-transform: capitalize; /* Para maging malinis ang "Copy Wright" */
-}
-
-/* Mobile View Adjustment */
-@media (max-width: 768px) {
-    .footer-bottom {
-        padding: 20px 15px;
-    }
-    .footer-bottom p {
-        font-size: 0.8rem;
-    }
-}
-
-
-
-/* --- MOBILE VIEW --- */
-@media (max-width: 992px) {
-    .footer-container { flex-wrap: wrap; }
-    .footer-col { min-width: 40%; }
-    .footer-logo {
-        width: 180px; /* Bahagyang liit sa mobile pero malaki pa rin kumpara sa dati */
-        margin: 0 auto 20px;
-        display: block;
-    }
-
-}
-
-@media (max-width: 768px) {
-    .footer-container { flex-direction: column; text-align: center; gap: 50px; }
-    .product-grid { justify-content: center; text-align: left; }
-    .contact-info li { justify-content: center; }
-    .social-icons-only { justify-content: center; }
-    
-    .google-rating { margin: 0 auto; }
-}
 /* Mobile Menu Toggle */
 .menu-toggle {
     display: none;
@@ -2199,3 +1915,116 @@ body {
 }
 
 .btn-circle img { width: 30px; height: 30px; }
+/* --- FOOTER MAIN --- */
+.modern-footer {
+    background: #000000; /* Pure Black */
+    color: #ffffff;
+    padding: 80px 0 0;
+    font-family: 'Poppins', sans-serif;
+    border-top: 2px solid #a00;
+}
+
+.footer-container {
+    max-width: 1550px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    flex: 0 1 auto; 
+}
+
+.brand-col {
+    max-width: 300px;
+}
+
+/* --- PRODUCT GRID FIX --- */
+.product-grid {
+    display: flex;
+    gap: 100px; /* Space sa pagitan ng Tires, Batteries, at Others */
+}
+
+.category-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #e10600; /* Red color para sa Tires, Batteries, Others header */
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    display: block;
+}
+
+.product-grid ul { list-style: none; padding: 0; margin: 0; }
+.product-grid ul li { margin-bottom: 8px; }
+
+.product-grid ul li a, 
+.footer-links li a { 
+    color: #bbb; 
+    font-size: 0.85rem; 
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.product-grid ul li a:hover, 
+.footer-links li a:hover { 
+    color: #e10600; /* Red hover effect */
+    padding-left: 5px;
+}
+
+/* --- GOOGLE RATING BOX --- */
+.google-rating-box {
+    background: #111111;
+    padding: 10px 15px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 20px;
+    border: 1px solid #222;
+}
+.rating-title { font-size: 0.6rem; color: #666; margin-bottom: 4px; }
+.rating-content { display: flex; align-items: center; gap: 10px; }
+.stars { color: #fbbc04; font-size: 0.85rem; }
+.score-num { color: #fff; font-weight: bold; font-size: 1rem; }
+
+/* --- HEADERS & LINKS --- */
+.footer-logo { width: 250px; margin-bottom: 25px; }
+.company-desc { font-size: 0.85rem; color: #bbb; line-height: 1.6; }
+.footer-col h4 { font-size: 1.1rem; margin-bottom: 30px; color: #fff; text-transform: uppercase; }
+
+/* --- CONTACT & SOCIALS --- */
+.contact-info { list-style: none; padding: 0; color: #bbb; font-size: 0.85rem; }
+.contact-info li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+.contact-info i { color: #e10600; }
+
+.follow-text { margin-top: 25px; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; }
+.social-icons-only { display: flex; gap: 12px; }
+
+.social-icons-only a {
+    width: 45px; height: 45px; background: #1a1a1a;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: #fff; text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons-only a:hover {
+    background: #e10600;
+    transform: translateY(-5px);
+}
+
+/* --- BOTTOM --- */
+.footer-bottom {
+    background: #000;
+    padding: 25px 0;
+    text-align: center;
+    border-top: 1px solid #111;
+}
+.footer-bottom p { font-size: 0.75rem; color: #444; margin: 0; }
+
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 768px) {
+    .footer-container { flex-direction: column; gap: 40px; }
+    .product-grid { flex-direction: column; gap: 20px; }
+}
+

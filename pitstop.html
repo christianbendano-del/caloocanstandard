@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caloocan Standard Inc. | The Right Tire Changes Everything!</title>
-    <link rel="stylesheet" href="aboutus.css">
+    <link rel="stylesheet" href="pitstop.css">
      <link rel="icon" type="image/png" href="picture/csiicon.png">
     
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -13,7 +13,7 @@
 </head>
 <body>
 
-   <div class="top-bar">
+ <div class="top-bar">
     <div class="top-bar-container">
         <div class="top-bar-left">
             <div class="top-bar-item">
@@ -31,7 +31,6 @@
         </div>
     </div>
 </div>
-
 <header>
     <div class="container header-content">
         <div class="logo">
@@ -41,7 +40,7 @@
         <nav id="main-nav">
             <ul class="nav-links">
                 
-                <li><a href="index.html">Home</a></li>
+                <li ><a href="index.html">Home</a></li>
                 
                 <li class="has-dropdown">
                     <a href="javascript:void(0)" class="dropdown-toggle">
@@ -51,13 +50,13 @@
                         <li><a href="tires.html">Tires</a></li>
                         <li><a href="batteries.html">Batteries</a></li>
                         <li><a href="lubricants.html">Lubricants</a></li>
-                        <li><a href="tubeandflaps.html">Tube and Flaps</a></li>
+                        <li><a href="tubeandflaps.html">Others</a></li>
                         
                     </ul>
                 </li>
 
-                <li><a href="about.html"class="active">About Us</a></li>
-             
+                <li><a href="about.html">About Us</a></li>
+              
                     <li><a href="pitstop.html">Pitstop</a></li>
                      <li><a href="beadealer.html">Be a Dealer</a></li>
             </ul>
@@ -66,124 +65,118 @@
         <div class="menu-toggle" id="mobile-menu">
             <i class="fas fa-bars"></i>
         </div>
-    </div> 
+    </div>
 </header>
+
 <div class="menu-overlay" id="menu-overlay"></div>
 
 <section class="modern-hero">
     <div class="hero-overlay">
         <div class="hero-container">
-            <h1>Mission and Vision</h1>
-            <p>The Caloocan DNA</p>
+            <h1>Pit Stop</h1>
+            <p>Drive Smarter, Stay Ahead</p>
         </div>
     </div>
 </section>
-
-<nav class="sub-menu-bar">
-    <div class="sub-menu-container">
-        <div class="custom-select-box" id="subToggle">
-            <span>About us</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-
-        <ul class="sub-menu-list" id="subMenuList">
-            <li ><a href="about.html">Who We Are</a></li>
-            <li class="active"><a href="missionandvision.html">Mission & Vision</a></li>
-            <li><a href="joinus.html">Join Us</a></li>
-        </ul>
+<section class="news-section">
+    <div class="news-header">
+        <h2 class="section-title">NEWS</h2>
+      
     </div>
-</nav>
-<section class="mission-vision-section" id="mission-vision">
-    <div class="container">
-        <div class="standard-header">
-            <h3>Caloocan Standard Inc.</h3>
-            <p>Established in 1969,  Caloocan Standard Inc. steadily grew into one of the country’s most trusted distributors of tires and batteries. Over decades of experience, we have expanded its product line, partnered with global brands, and built a nationwide distribution network—establishing itself as the GOLD standard in the automotive industry. 
-</p>
-        </div>
 
-        <div class="mv-grid">
-            <div class="mv-card mission">
-                <div class="mv-icon">
-                    <i class="fas fa-bullseye"></i>
+    <div class="carousel-container">
+        <button class="btn-scroll left" onclick="scrollNews(-350)">&#10094;</button>
+        
+        <div class="news-wrapper" id="newsWrapper">
+            <div class="news-card">
+                <div class="img-container">
+                    <span class="date-tag">15 <br> JUN</span>
+                    <img src="picture/samplepic.jpg" alt="F1 News">
                 </div>
-                <div class="mv-content">
-                    <h2>Our Mission</h2>
-                    <div class="red-line"></div>
-                    <p>To grow a leading brand by expanding localized distribution networks and delivering responsive, value-oriented services tailored to customer needs.</p>
+                <div class="news-content">
+                    <h3>CSI SAMPLE NEWS</h3>
+                    <p class="category">HEADLINES</p>
+                    <p class="summary">For the first time in six seasons, Fernando Alonso will no longer line up in the...</p>
+                    <a href="#" class="show-more">Show More ⊕</a>
                 </div>
             </div>
 
-            <div class="mv-card vision">
-                <div class="mv-icon">
-                    <i class="fas fa-eye"></i>
+            <div class="news-card">
+                <div class="img-container">
+                    <span class="date-tag">14 <br> JUN</span>
+                    <img src="picture/samplepic.jpg" alt="F1 News">
                 </div>
-                <div class="mv-content">
-                    <h2>Our Vision</h2>
-                    <div class="red-line"></div>
-                    <p>To be the leading automotive solutions provider in the Philippines, recognized for our comprehensive product range, cost-effective offerings, and exceptional customer service..</p>
+                <div class="news-content">
+                    <h3>CSI SAMPLE NEWS</h3>
+                    <p class="category">FEATURES</p>
+                    <p class="summary">The new machine, once again to be raced by Jenson Button and Fernando Alonso.</p>
+                    <a href="#" class="show-more">Show More ⊕</a>
                 </div>
             </div>
+
+            <div class="news-card">
+                <div class="img-container">
+                    <span class="date-tag">13 <br> JUN</span>
+                    <img src="picture/samplepic.jpg" alt="F1 News">
+                </div>
+                <div class="news-content">
+                    <h3>CSI SAMPLE NEWS</h3>
+                    <p class="category">HEADLINES</p>
+                    <p class="summary">Unlike last winter, which saw the teams coping with an unprecedented...</p>
+                    <a href="#" class="show-more">Show More ⊕</a>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="img-container">
+                    <span class="date-tag">11 <br> JUN</span>
+                    <img src="picture/samplepic.jpg" alt="F1 News">
+                </div>
+                <div class="news-content">
+                    <h3>CSI SAMPLE NEWS</h3>
+                    <p class="category">FEATURES</p>
+                    <p class="summary">The layout phase of the new car was completed by the annual summer break.</p>
+                    <a href="#" class="show-more">Show More ⊕</a>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="img-container"><span class="date-tag">10 <br> JUN</span>
+                    <img src="picture/samplepic.jpg"></div>
+                <div class="news-content"><h3>CSI SAMPLE NEWS</h3><p class="category">TECHNICAL</p><p class="summary">The team focuses on aerodynamics during the morning session.</p><a href="#" class="show-more">Show More ⊕</a></div>
+            </div>
         </div>
+
+        <button class="btn-scroll right" onclick="scrollNews(350)">&#10095;</button>
     </div>
 </section>
-<section class="modern-values">
-    <div class="values-container">
-        <div class="values-info">
-            <h1 class="glitch-title">CORE <br><span>VALUES</span></h1>
-            
-            <div class="value-description">
-                <div class="value-row">
-                    <span class="value-number">01</span>
-                    <div class="value-text">
-                        <h3>COMMITMENT TO EXCELLENCE</h3>
-                        <p>We embrace change with intention, always seeking smarter, more sustainable ways to grow.</p>
-                    </div>
-                </div>
-                <div class="value-row">
-                    <span class="value-number">02</span>
-                    <div class="value-text">
-                        <h3>SERVICE ROOTED BY PASSION</h3>
-                        <p>We go beyond transactions—offering sincere, responsive service that builds lasting relationships.</p>
-                    </div>
-                </div>
-                <div class="value-row">
-                    <span class="value-number">03</span>
-                    <div class="value-text">
-                        <h3>STRONGER AS ONE</h3>
-                        <p>Together, we overcome challenges, celebrate wins, and grow stronger.</p>
-                    </div>
-                </div>
-                <div class="value-row">
-                    <span class="value-number">04</span>
-                    <div class="value-text">
-                        <h3>INTEGRITY THAT BUILDS TRUST</h3>
-                        <p>We uphold honesty and accountability in everything we do, earning trust through consistency and principle.</p>
-                    </div>
-                </div>
+<section class="modern-news-container">
+    <div class="news-feed-overlay">
+        
+        <div class="overlay-card">
+            <div class="card-bg-img" style="background-image: url('picture/[CSI]\ Home\ Pitstop\ -\ Car\ Care\ Tips.png');"></div>
+            <div class="overlay-content">
+                <p class="overlay-subtitle">MAINTENANCE GUIDE</p>
+                <h2 class="overlay-title">Car-Care Tips</h2>
+                <p class="overlay-description">Keep your engine running like new with these expert tips.</p>
+                <a href="#" class="btn-discover">
+                    <span class="plus-icon">⊕</span> DISCOVER MORE
+                </a>
             </div>
         </div>
 
-        <div class="values-visual-grid">
-            <h2 class="branding-title">CSSI <span>VALUES</span></h2>
-            <div class="glass-grid-layout">
-                <div class="glass-card">
-                    <div class="icon-bg"><i class="fas fa-award"></i></div>
-                    <p><strong>C</strong>ommitment to Excellence</p>
-                </div>
-                <div class="glass-card">
-                    <div class="icon-bg"><i class="fas fa-tools"></i></div>
-                    <p><strong>S</strong>ervice Rooted by Passion</p>
-                </div>
-                <div class="glass-card">
-                    <div class="icon-bg"><i class="fas fa-users"></i></div>
-                    <p><strong>S</strong>tronger As One</p>
-                </div>
-                <div class="glass-card">
-                    <div class="icon-bg"><i class="fas fa-handshake"></i></div>
-                    <p><strong>I</strong>ntegrity that Builds Trust</p>
-                </div>
+        <div class="overlay-card">
+            <div class="card-bg-img" style="background-image: url('picture/[CSI]\ Home\ Pitstop\ -\ Car\ Talks.png');"></div>
+            <div class="overlay-content">
+                <p class="overlay-subtitle">COMMUNITY HUB</p>
+                <h2 class="overlay-title">Car Talks</h2>
+                <p class="overlay-description">Join the conversation about the future of automotive tech.</p>
+                <a href="#" class="btn-discover">
+                    <span class="plus-icon">⊕</span> DISCOVER MORE
+                </a>
             </div>
         </div>
+
     </div>
 </section>
 <div class="contact-stack" id="contactStack">
@@ -202,10 +195,10 @@
        rel="noopener noreferrer" 
        class="btn-circle email">
         <img src="picture/communication.png" alt="Gmail">
-    </a>
+    </a> 
     </div>
 </div>
- <footer class="modern-footer">
+<footer class="modern-footer">
     <div class="footer-container">
         
         <div class="footer-col brand-col">
@@ -288,7 +281,6 @@
         <p>Copyright © 2026 Caloocan Standard Inc. All Rights Reserved.</p>
     </div>
 </footer>
-
     <script src="script.js"></script>
 </body>
 </html>

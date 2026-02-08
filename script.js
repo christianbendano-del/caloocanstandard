@@ -256,3 +256,11 @@ async function handleSubmit(event) {
     });
 }
 
+// news section pitstop
+function scrollNews(amount) {
+    const wrapper = document.getElementById('newsWrapper');
+    wrapper.scrollBy({
+        left: amount,
+        behavior: 'smooth'
+    });
+}
