@@ -30,36 +30,63 @@ body {
 /* ==========================================================================
    2. HEADER & NAVIGATION (DESKTOP)
    ========================================================================== */
+
 .top-bar {
     background-color: #d31411; /* CSI Red */
     color: #ffffff;
     width: 100%;
-    padding: 6px 0; /* Manipis na bar */
+    padding: 8px 0;
     font-family: 'Poppins', sans-serif;
 }
 
 .top-bar-container {
-    /* Palitan ang percentage na ito depende sa padding ng iyong Logo/Menu */
-    padding: 0 8%; 
+    max-width: 1790px; /* Pantay sa grid mo */
+    margin: 0 auto;
+    padding: 0 5%; 
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
 }
 
 .top-bar-left, .top-bar-right {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
 .top-bar-item {
-    font-size: 13px; /* Sakto lang ang laki */
+    font-size: 13px;
     font-weight: 400;
     display: flex;
     align-items: center;
-    gap: 6px;
-    white-space: nowrap; /* Iwasan ang pag-wrap ng text */
+    gap: 8px;
+    white-space: nowrap;
 }
+
+/* 3. Main Header (Logo & Nav) */
+header {
+    background: #ffffff;
+    height: 80px; /* Fixed height for consistency */
+    display: flex;
+    align-items: center;
+}
+
+.header-content {
+    max-width: 1790px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
 
 /* --- MOBILE VIEW FIX --- */
 @media (max-width: 768px) {
@@ -86,25 +113,7 @@ body {
     /* .top-bar-left .top-bar-item:nth-child(2) { display: none; } */
 }
 
-header {
-    background: var(--white);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: var(--nav-height);
-}
-
-.logo img {
-    height: 55px;
-    transition: transform 0.3s ease;
-}
 
 /* Nav Desktop */
 nav ul {
@@ -255,6 +264,13 @@ header {
     height: 70px;
 }
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Oswald:wght@700&display=swap');
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
 /* Mobile Menu Toggle */
 .menu-toggle {
     display: none;
@@ -270,7 +286,6 @@ header {
     .hero h2 { font-size: 2.2rem; }
     .top-bar .container { flex-direction: column; text-align: center; gap: 5px; }
 }
-
 
 /* Overlay para magmukhang modern at mabasa ang text */
 .hero-overlay {
@@ -303,7 +318,7 @@ header {
     height: 600px; /* Taas ng banner */
     
     /* BACKGROUND IMAGE CODE */
-    background-image: url('picture/[CSI] Pitstop Cover.png'); /* <-- PALITAN MO ITO NG FILENAME NG PICTURE MO */
+
     background-size: cover;      /* Pinupuno ang buong space ng banner */
     background-position: center; /* Pinapagitna ang focus ng litrato */
     background-repeat: no-repeat;
@@ -322,11 +337,16 @@ body {
     padding: 0;
 }
 
-/* --- News Section Container --- */
+/* =============================================================
+   NEWS SECTION - EXTRA COMPACT THUMBNAIL STYLE
+   ============================================================= */
+
+/* 1. Main Container */
 .news-section { 
-    padding: 50px 20px; 
+    padding: 40px 20px; 
     max-width: 1400px; 
     margin: auto; 
+    font-family: 'Poppins', sans-serif;
 }
 
 .news-header { 
@@ -337,12 +357,16 @@ body {
 }
 
 .section-title { 
+    font-size: 24px;
     font-weight: 900; 
     letter-spacing: 1px; 
     text-transform: uppercase;
+    color: #111;
+    border-left: 4px solid #a70707;
+    padding-left: 12px;
 }
 
-/* --- Carousel & Wrapper --- */
+/* 2. Carousel Wrapper */
 .carousel-container { 
     position: relative; 
     display: flex; 
@@ -351,48 +375,51 @@ body {
 
 .news-wrapper {
     display: flex;
-    gap: 25px;
-    overflow-x: hidden; /* Itinatago ang scrollbar */
+    gap: 15px; /* Siksik na distansya sa pagitan ng cards */
+    overflow-x: auto; 
     scroll-behavior: smooth;
-    padding: 30px 15px; /* Dinagdagan ang padding para sa hover space */
+    padding: 15px 5px;
+    scrollbar-width: none; /* Tinatago ang scrollbar sa Firefox */
 }
 
-/* --- News Card (The "Box" with Hover) --- */
+/* Tinatago ang scrollbar sa Chrome/Safari */
+.news-wrapper::-webkit-scrollbar {
+    display: none; 
+}
+
+/* 3. News Card - Maliit na "Box" */
 .news-card {
-    min-width: 300px;
+    min-width: 240px; /* Mas maliit na lapad */
     flex: 0 0 auto;
-    background-color: #ffffff; /* Puting background para sa box */
-    border-radius: 12px;
-    padding: 10px;
-    border: 1px solid #eee; /* Manipis na border para sa box look */
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Smooth spring animation */
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow habang idle */
+    background-color: #ffffff; 
+    border-radius: 8px;
+    padding: 8px; /* Compact padding */
+    border: 1px solid #eee; 
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
 }
 
-/* HOVER EFFECT: Aangat ang card at magkakaglow/shadow */
 .news-card:hover {
-    transform: translateY(-12px); /* Card lifting effect */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Deep shadow box effect */
-    border-color: #a70707; /* Magpapalit ng kulay ang border sa hover */
+    transform: translateY(-5px); 
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1); 
+    border-color: #a70707; 
 }
 
-/* --- Image Container & Zoom --- */
+/* 4. Image Container - Pinaka-maliit na Height */
 .img-container { 
     position: relative; 
     overflow: hidden; 
-    border-radius: 8px; /* Round corners para sa image */
+    border-radius: 5px; 
 }
 
 .img-container img {
     width: 100%;
-    height: 180px;
+    height: 120px; /* PINAKAMALIIT NA HEIGHT SA DESKTOP */
     object-fit: cover;
     display: block;
-    transition: transform 0.6s ease; /* Bagalan ang zoom transition */
+    transition: transform 0.5s ease;
 }
 
-/* Zoom effect sa image pag nag-hover sa card */
 .news-card:hover .img-container img { 
     transform: scale(1.1); 
 }
@@ -401,306 +428,256 @@ body {
     position: absolute;
     top: 0; 
     left: 0;
-    background: #a70707; /* Dark red tag */
+    background: #a70707; 
     color: white;
-    padding: 6px 12px;
-    font-size: 11px;
+    padding: 4px 8px;
+    font-size: 9px;
     font-weight: bold;
     text-align: center;
     z-index: 2;
-    border-bottom-right-radius: 8px;
+    border-bottom-right-radius: 5px;
 }
 
-/* --- News Content (Text) --- */
+/* 5. News Content - Compact Text */
 .news-content h3 { 
-    font-size: 16px; 
-    margin: 15px 0 5px; 
-    font-weight: bold; 
+    font-size: 14px; /* Maliit na headline */
+    margin: 10px 0 3px; 
+    font-weight: 700; 
     color: #111;
-    transition: color 0.3s ease;
-}
-
-/* Magkukulay pula ang title sa hover */
-.news-card:hover h3 {
-    color: #a70707;
+    line-height: 1.3;
 }
 
 .category { 
     color: #a70707; 
-    font-size: 10px; 
-    font-weight: bold; 
-    margin-bottom: 8px; 
+    font-size: 9px; 
+    font-weight: 800; 
+    margin-bottom: 5px; 
     text-transform: uppercase;
 }
 
 .summary { 
     color: #666; 
-    font-size: 13px; 
-    line-height: 1.5; 
-    height: 40px; 
+    font-size: 11px; 
+    line-height: 1.4; 
+    height: 32px; /* Hanggang 2 lines lang */
     overflow: hidden; 
 }
 
 .show-more { 
-    color: #888; 
+    color: #999; 
     text-decoration: none; 
-    font-size: 12px; 
-    display: block; 
-    margin-top: 15px; 
+    font-size: 11px; 
+    display: inline-block; 
+    margin-top: 8px; 
     font-weight: bold;
 }
 
-.news-card:hover .show-more {
-    color: #111;
-}
-
-/* --- Scroll Buttons --- */
+/* 6. Scroll Buttons */
 .btn-scroll {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    border: none;
-    width: 45px;
-    height: 45px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #111;
+    border: 1px solid #eee;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     cursor: pointer;
     z-index: 10;
     transition: 0.3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .btn-scroll:hover { 
     background: #a70707; 
-    box-shadow: 0 0 15px rgba(167, 7, 7, 0.4);
+    color: white;
+    border-color: #a70707;
 }
 
-.left { left: -25px; }
-.right { right: -25px; }
-/* --- Media Query para sa Mobile View --- */
+.left { left: -15px; }
+.right { right: -15px; }
+
+/* =============================================================
+   MOBILE RESPONSIVE (Maliit na screens)
+   ============================================================= */
+
 @media screen and (max-width: 768px) {
-    
-    /* 1. Pinapaliit ang padding ng main section para mas malapad ang carousel */
-    .news-section {
-        padding: 30px 10px;
-    }
-
-    /* 2. News Wrapper: Pinapayagan ang touch swipe habang nakatago ang scrollbar */
-    .news-wrapper {
-        overflow-x: auto;
-        gap: 15px; /* Mas maliit na gap sa mobile */
-        padding: 20px 5px;
-        -webkit-overflow-scrolling: touch; /* Smooth swipe para sa iOS */
-    }
-
-    /* 3. News Card: Liliit mismo ang buong box */
     .news-card {
-        min-width: 240px; /* Mula 300px, ginawang 240px */
-        padding: 8px;
+        min-width: 180px; /* Mas siksik sa mobile */
     }
 
-    /* 4. Image: Liliit ang picture sa loob ng box */
     .img-container img {
-        height: 140px; /* Mula 180px, ginawang 140px */
+        height: 90px; /* THUMBNAIL SIZE NA LANG */
     }
 
-    /* 5. Typography: Pinapaliit ang font sizes para sa mobile */
     .news-content h3 {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .summary {
-        font-size: 11px;
-        height: 35px;
+        display: none; /* Tinatago ang summary sa mobile para malinis tingnan */
     }
 
-    /* 6. Scroll Buttons: Inaayos ang position para hindi matakpan ang maliit na card */
-    .btn-scroll {
-        width: 35px; /* Mas maliit na buttons */
-        height: 35px;
-        font-size: 14px;
-        background: rgba(167, 7, 7, 0.9); /* Gawing mas solid ang kulay sa mobile para madaling makita */
-    }
-
-    /* Inilalapit ang arrows sa gilid para hindi sila "floating" masyado */
     .left { left: 0px; }
     .right { right: 0px; }
-
-    /* Iniiwasan ang hover lift effect sa mobile dahil minsan nagiging sanhi ito ng lag */
-    .news-card:hover {
-        transform: none;
-    }
 }
 
-/* Para sa mas maliit pang screens (Extra Small) */
 @media screen and (max-width: 480px) {
     .news-card {
-        min-width: 200px; /* Mas pinaliit pa para sa portrait phone view */
+        min-width: 150px;
     }
     
     .img-container img {
-        height: 120px;
+        height: 80px; /* Pinaka-maliit na picture para sa portrait phones */
     }
 }
-
 /*cartalks */
 
 /* Container adjustment */
+/* --- Modern News Container --- */
 .modern-news-container {
     padding: 60px 20px;
-    background-color: white; /* Deep dark background */
+    background-color: #fff; 
     display: flex;
     justify-content: center;
 }
 
 .news-feed-overlay {
     display: flex;
-    gap: 20px;
-    max-width: 1300px; /* Mas maliit na overall width para magmukhang compact */
+    gap: 25px;
+    max-width: 1300px;
     width: 100%;
 }
 
+/* --- Card Structure --- */
 .overlay-card {
-    position: relative;
     flex: 1;
-    height: 300px; /* Mas maikli kumpara sa dati */
-    border-radius: 15px; /* Rounded corners para sa modern look */
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    border-radius: 15px;
     overflow: hidden;
     cursor: pointer;
+    background: #fff;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    border: 1px solid #f0f0f0;
 }
 
-/* Background Image with Zoom */
+/* 1. Image Section - LAKIHAN NG KONTI (Mula 200px -> 280px) */
 .card-bg-img {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: 280px; 
     background-size: cover;
     background-position: center;
     transition: transform 0.8s ease;
     z-index: 1;
 }
 
-/* Gradient Overlay */
-.overlay-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(66, 65, 65, 0) 10%, rgba(0,0,0,0.2) 100%);
-    z-index: 2;
-    transition: opacity 0.3s;
-}
-
-/* Content Styling */
+/* 2. Content Styling (Bottom) */
 .overlay-content {
     position: relative;
     z-index: 3;
-    padding: 30px;
-    color: white;
-    height: 100%;
+    padding: 20px; /* Binawasan ng konti ang padding */
+    color: #111;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Text sa bandang ibaba */
-    transition: transform 0.4s ease;
+    justify-content: flex-start;
+    background: #fff;
+    flex-grow: 1;
 }
 
 .overlay-subtitle {
-    font-size: 10px;
-    color: #e10600; /* F1 Red */
+    font-size: 9px; /* Pinaliit din ang subtitle */
+    color: #e10600;
     font-weight: 800;
-    letter-spacing: 2px;
-    margin-bottom: 5px;
-}
-
-.overlay-title {
-    font-size: 24px;
-    font-weight: 900;
-    margin-bottom: 8px;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
     text-transform: uppercase;
 }
 
-.overlay-description {
-    font-size: 12px;
-    color: #ccc;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    opacity: 0.8;
+.overlay-title {
+    font-size: 20px; /* Mas compact na title */
+    font-weight: 900;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    color: #000;
+    line-height: 1.2;
 }
 
-/* Modern Button */
+/* 3. Description - LIITAN (Mula 13px -> 11px) */
+.overlay-description {
+    font-size: 11px; 
+    color: #777; 
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+/* Modern Button (Pill Shape) */
 .btn-discover {
     display: inline-flex;
     align-items: center;
-    background: #fff;
-    color: #000;
+    background: #000;
+    color: #fff;
     text-decoration: none;
-    padding: 10px 20px;
-    font-weight: 900;
-    font-size: 11px;
+    padding: 10px 18px;
+    font-weight: 800;
+    font-size: 10px; /* Pinaliit din ang text ng button */
     width: fit-content;
-    border-radius: 50px; /* Pill shape button */
+    border-radius: 50px;
     transition: all 0.3s;
+    margin-top: auto;
 }
 
 .plus-icon {
-    margin-right: 8px;
-    font-size: 14px;
+    margin-right: 6px;
+    font-size: 12px;
     transition: transform 0.3s;
 }
 
-/* --- MODERN HOVER EFFECTS --- */
+/* --- HOVER EFFECTS --- */
 
-/* 1. Card Lift and Glow */
 .overlay-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(225, 6, 0, 0.2); /* Red glow effect */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* 2. Image Zoom */
 .overlay-card:hover .card-bg-img {
-    transform: scale(1.15);
+    transform: scale(1.08);
 }
 
-/* 3. Button Interaction */
 .overlay-card:hover .btn-discover {
     background: #e10600;
-    color: #fff;
 }
 
 .overlay-card:hover .plus-icon {
-    transform: rotate(90deg); /* Iikot yung plus icon */
+    transform: rotate(90deg);
 }
 
 /* --- Mobile View --- */
 @media screen and (max-width: 768px) {
     .news-feed-overlay {
         flex-direction: column;
-        align-items: center;
+        gap: 20px;
     }
-    .overlay-card {
-        width: 100%;
-        max-width: 350px;
-        height: 280px;
+    .card-bg-img {
+        height: 220px; /* Adjust sa mobile para hindi sobrang haba */
     }
 }
 /* --- FOOTER MAIN --- */
 .modern-footer {
-    background: #000000; /* Pure Black */
-    color: #ffffff;
+    background: #000000;
+    color: white;
     padding: 80px 0 0;
     font-family: 'Poppins', sans-serif;
     border-top: 2px solid #a00;
 }
 
 .footer-container {
-     max-width: 1550px;
+    max-width: 1550px;
     margin: 0 auto;
     padding: 0 40px 60px;
     display: flex;
@@ -717,23 +694,16 @@ body {
     max-width: 300px;
 }
 
-/* --- PRODUCT GRID FIX --- */
+/* --- PRODUCT GRID (Ang 3-Column Layout) --- */
 .product-grid {
     display: flex;
-    gap: 100px; /* Space sa pagitan ng Tires, Batteries, at Others */
+    gap: 100px; /* Distansya sa pagitan ng Tires, Batt, at Other */
 }
 
-.category-label {
-    font-size: 0.75rem;
-    font-weight: 800;
-    color: #e10600; /* Red color para sa Tires, Batteries, Others header */
-    margin-bottom: 12px;
-    letter-spacing: 1px;
-    display: block;
-}
+
 
 .product-grid ul { list-style: none; padding: 0; margin: 0; }
-.product-grid ul li { margin-bottom: 8px; }
+.product-grid ul li { margin-bottom: 10px; }
 
 .product-grid ul li a, 
 .footer-links li a { 
@@ -741,43 +711,36 @@ body {
     font-size: 0.85rem; 
     text-decoration: none;
     transition: 0.3s ease;
+    white-space: nowrap; /* Para hindi mag-break ang text sa gitna */
 }
 
 .product-grid ul li a:hover, 
 .footer-links li a:hover { 
-    color: #e10600; /* Red hover effect */
+    color: #e10600;
     padding-left: 5px;
 }
 
-/* --- GOOGLE RATING BOX --- */
-.google-rating-box {
-    background: #111111;
-    padding: 10px 15px;
-    border-radius: 6px;
-    display: inline-block;
-    margin-top: 20px;
-    border: 1px solid #222;
-}
-.rating-title { font-size: 0.6rem; color: #666; margin-bottom: 4px; }
-.rating-content { display: flex; align-items: center; gap: 10px; }
-.stars { color: #fbbc04; font-size: 0.85rem; }
-.score-num { color: #fff; font-weight: bold; font-size: 1rem; }
-
-/* --- HEADERS & LINKS --- */
+/* --- HEADERS & LOGO --- */
 .footer-logo { width: 250px; margin-bottom: 25px; }
 .company-desc { font-size: 0.85rem; color: #bbb; line-height: 1.6; }
-.footer-col h4 { font-size: 1.1rem; margin-bottom: 30px; color: #fff; text-transform: uppercase; }
+.footer-col h4 { 
+    font-size: 1.1rem; 
+    margin-bottom: 30px; 
+    color: white; 
+    text-transform: uppercase; 
+    font-weight: 700;
+}
 
 /* --- CONTACT & SOCIALS --- */
 .contact-info { list-style: none; padding: 0; color: #bbb; font-size: 0.85rem; }
 .contact-info li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-.contact-info i { color: #e10600; }
+.contact-info i { color: #e10600; font-size: 1rem; }
 
-.follow-text { margin-top: 25px; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; }
+.follow-text { margin-top: 25px; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; font-size: 0.9rem; }
 .social-icons-only { display: flex; gap: 12px; }
 
 .social-icons-only a {
-    width: 45px; height: 45px; background: #1a1a1a;
+    width: 40px; height: 40px; background: #1a1a1a;
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
     color: #fff; text-decoration: none;
     transition: 0.3s;
@@ -788,21 +751,60 @@ body {
     transform: translateY(-5px);
 }
 
-/* --- BOTTOM --- */
+/* --- GOOGLE RATING BOX --- */
+.google-rating-box {
+    background: #111111;
+    padding: 12px 18px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 25px;
+    border: 1px solid #222;
+}
+.rating-title { font-size: 0.65rem; color: #666; margin-bottom: 5px; text-transform: uppercase; }
+.rating-content { display: flex; align-items: center; gap: 12px; }
+.stars { color: #fbbc04; font-size: 0.9rem; }
+.score-num { color: #fff; font-weight: bold; font-size: 1.1rem; }
+
+/* --- BOTTOM BAR --- */
 .footer-bottom {
     background: #000;
     padding: 25px 0;
     text-align: center;
     border-top: 1px solid #111;
 }
-.footer-bottom p { font-size: 0.75rem; color: #444; margin: 0; }
+.footer-bottom p { font-size: 0.75rem; color: #555; margin: 0; }
 
-/* --- RESPONSIVE --- */
-@media screen and (max-width: 768px) {
-    .footer-container { flex-direction: column; gap: 40px; }
-    .product-grid { flex-direction: column; gap: 20px; }
+/* --- MOBILE RESPONSIVE --- */
+@media screen and (max-width: 992px) {
+    .product-grid { gap: 40px; } /* Paliitin ang gap sa tablet */
 }
 
+@media screen and (max-width: 768px) {
+    .footer-container { flex-direction: column; gap: 50px; text-align: left; }
+    .product-grid { flex-direction: column; gap: 30px; }
+    .footer-logo { width: 200px; }
+}
+.category-label {
+    /* SAME FONT AND SIZE AS LINKS */
+    font-size: 1rem; 
+    font-weight: 800; /* Bold para sa distinction pero same size */
+    color: white; /* Gray muna, mag-re-red sa hover */
+    
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 29px;
+    transition: 0.3s ease;
+    width: fit-content;
+}
+
+/* Hover Effect para sa main categories */
+.category-label:hover {
+    color: #cc0606; /* Magpapalit sa puti para mag-pop */
+    letter-spacing: 3px; /* Konting "stretch" effect sa hover */
+    cursor: pointer;
+}
 
 
 
